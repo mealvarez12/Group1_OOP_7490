@@ -13,16 +13,13 @@ public class Room {
     private String size;
     private String color;
     private int numberOfRoom;
-    private Door door = new Door(); 
+    private Door door = new Door(numberOfRoom, numberOfRoom, color, numberOfRoom, size, true); 
     private Light light = new Light();
 
     public Room() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public Room() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
     private void hasDoor() {
 
