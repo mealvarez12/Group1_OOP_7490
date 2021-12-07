@@ -29,8 +29,6 @@ public class House {
         this.color = color;
     }
 
-    
-    
     /**
      * @return the color
      */
@@ -100,8 +98,6 @@ public class House {
     public void setAlarmSignal(AlarmSignal alarmSignal) {
         this.alarmSignal = alarmSignal;
     }
-    
-    
     
     
 }

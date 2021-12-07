@@ -29,7 +29,7 @@ public class User {
         this.age = age;
     }
 
-        
+    
     /**
      * @return the name
      */
@@ -85,7 +85,6 @@ public class User {
     public void setCellphone(Cellphone cellphone) {
         this.cellphone = cellphone;
     }
-    
     
     
 }
