@@ -34,7 +34,6 @@ public class Television {
     }
 
     
-    
     /**
      * @return the inches
      */
@@ -104,7 +103,6 @@ public class Television {
     public void setOn(boolean on) {
         this.on = on;
     }
-   
     
     
 }

@@ -1,6 +1,7 @@
 
 package ec.edu.espe.house.model;
 
+
 /**
  *
  * @author Team1
@@ -105,7 +106,5 @@ public class Cellphone {
     public void setColor(String color) {
         this.color = color;
     }
-
-  
     
 }

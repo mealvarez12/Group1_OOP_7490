@@ -35,7 +35,6 @@ public class Door {
     }
 
     
-    
     /**
      * @return the lenght
      */
