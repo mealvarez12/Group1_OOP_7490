@@ -2,7 +2,7 @@ package ec.edu.espe.house.model;
 
 /**
  *
- * @author grupo1
+ * @author Team1
  */
 public class Door {
     
