@@ -3,7 +3,7 @@ package ec.edu.espe.house.model;
 
 /**
  *
- * @author grupo1
+ * @author Team1
  */
 public class Television {
     
@@ -33,7 +33,6 @@ public class Television {
         this.on = on;
     }
 
-    
     
     /**
      * @return the inches
@@ -104,7 +103,6 @@ public class Television {
     public void setOn(boolean on) {
         this.on = on;
     }
-   
     
     
 }

@@ -3,7 +3,7 @@ package ec.edu.espe.house.model;
 
 /**
  *
- * @author group1
+ * @author Team1
  */
 public class House {
     
@@ -25,8 +25,6 @@ public class House {
         this.color = color;
     }
 
-    
-    
     /**
      * @return the color
      */
@@ -96,8 +94,6 @@ public class House {
     public void setAlarmSignal(AlarmSignal alarmSignal) {
         this.alarmSignal = alarmSignal;
     }
-    
-    
     
     
 }

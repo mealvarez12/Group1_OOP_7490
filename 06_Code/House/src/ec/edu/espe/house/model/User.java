@@ -3,7 +3,7 @@ package ec.edu.espe.house.model;
 
 /**
  *
- * @author grupo1
+ * @author Team1
  */
 public class User {
     
@@ -25,7 +25,7 @@ public class User {
         this.age = age;
     }
 
-        
+    
     /**
      * @return the name
      */
@@ -81,7 +81,6 @@ public class User {
     public void setCellphone(Cellphone cellphone) {
         this.cellphone = cellphone;
     }
-    
     
     
 }

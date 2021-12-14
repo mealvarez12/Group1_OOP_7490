@@ -3,7 +3,7 @@ package ec.edu.espe.house.model;
 
 /**
  *
- * @author grupo1
+ * @author Team1
  */
 public class SoundSystem {
     
@@ -33,7 +33,7 @@ public class SoundSystem {
         this.on = on;
     }
 
-    
+  
     
     /**
      * @return the potencyWatts
