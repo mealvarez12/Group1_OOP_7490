@@ -4,7 +4,7 @@ package ec.edu.espe.house.model;
 
 /**
  *
- * @author Team1
+ * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
 public class Cellphone {
     

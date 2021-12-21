@@ -14,7 +14,7 @@ import ec.edu.espe.house.model.User;
 
 /**
  *
- * @author  Team1
+ * @author  malvarez, altamiranoc, almachea, andradea, andrangoa
  */
 public class SystemHouse {
 
@@ -33,63 +33,139 @@ public class SystemHouse {
         AlarmSignal alarmSignal = new AlarmSignal();
         Cellphone cellphone = new Cellphone();
         Task task = new Task();
+        
+        
         while (!exit) {
             System.out.println("Welcome to the system house");
             System.out.println("What device do you want to control?");
             System.out.println("1. AlarmSignal");
             System.out.println("2. Door");
-            System.out.println("3. House");
-            System.out.println("4. Ligths");
-            System.out.println("5. Room");
-            System.out.println("6. SoundSystem");
-            System.out.println("7. Task");
-            System.out.println("8. Television");
-            System.out.println("9. Exit");
+            System.out.println("3. Ligths");
+            System.out.println("4. SoundSystem");
+            System.out.println("5. Television");
+            System.out.println("6. Exit");
+            System.out.println("Write your option: ");
             option = sc.nextInt();
             switch (option) {
                 case 1:
-                    System.out.println("");
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    System.out.println("Welcome, you chose the lights menu");
+                    System.out.println("Welcome, you chose the AlarmSignal menu");
                     while (!exit) {
-                        System.out.println("Do you want to turn the lights on? ");
+                        System.out.println("Do you want to turn on AlarmSignal? ");
                         System.out.println("1. Yes ");
                         System.out.println("2. No ");
                         System.out.println("3. Exit");
+                        System.out.println("Write your option: ");
                         option = sc.nextInt();
                         switch (option) {
                             case 1:
-                                System.out.println("The ligths will turn on");
+                                System.out.println("The AlarmSignal will turn on");
                                 break;
                             case 2:
-                                System.out.println("The ligths will not turn on");
+                                System.out.println("The AlarmSignal will not turn on");
                                 break;
                             case 3:
                                 exit = true;
-                                System.out.println("Successful exit");
+                                System.out.println("Successful, exit");
                                 break;
                         }
-
+                    }
+                    break;
+                case 2:
+                    System.out.println("Welcome, you chose the Door menu");
+                    while (!exit) {
+                        System.out.println("Do you want to open on Door? ");
+                        System.out.println("1. Yes ");
+                        System.out.println("2. No ");
+                        System.out.println("3. Exit");
+                        System.out.println("Write your option: ");
+                        option = sc.nextInt();
+                        switch (option) {
+                            case 1:
+                                System.out.println("The Door will open");
+                                break;
+                            case 2:
+                                System.out.println("The Door will not open");
+                                break;
+                            case 3:
+                                exit = true;
+                                System.out.println("Successful, exit");
+                                break;
+                        }
+                    }                    
+                    break;
+                case 3:
+                    System.out.println("Welcome, you chose the Ligths menu");
+                    while (!exit) {
+                        System.out.println("Do you want to turn on the Ligths? ");
+                        System.out.println("1. Yes ");
+                        System.out.println("2. No ");
+                        System.out.println("3. Exit");
+                        System.out.println("Write your option: ");
+                        option = sc.nextInt();
+                        switch (option) {
+                            case 1:
+                                System.out.println("The Ligths will turn on");
+                                break;
+                            case 2:
+                                System.out.println("The Ligths will not turn on");
+                                break;
+                            case 3:
+                                exit = true;
+                                System.out.println("Successful, exit");
+                                break;
+                        }
+                    }                     
+                    break;
+                case 4:
+                    System.out.println("Welcome, you chose the SoundSystem menu");
+                    while (!exit) {
+                        System.out.println("Do you want to turn the SoundSystem on? ");
+                        System.out.println("1. Yes ");
+                        System.out.println("2. No ");
+                        System.out.println("3. Exit");
+                        System.out.println("Write your option: ");
+                        option = sc.nextInt();
+                        switch (option) {
+                            case 1:
+                                System.out.println("The SoundSystem will turn on");
+                                break;
+                            case 2:
+                                System.out.println("The SoundSystem will not turn on");
+                                break;
+                            case 3:
+                                exit = true;
+                                System.out.println("Successful, exit");
+                                break;
+                        }
                     }
                     break;
                 case 5:
+                    System.out.println("Welcome, you chose the Television menu");
+                    while (!exit) {
+                        System.out.println("Do you want to turn on the Television? ");
+                        System.out.println("1. Yes ");
+                        System.out.println("2. No ");
+                        System.out.println("3. Exit");
+                        System.out.println("Write your option: ");
+                        option = sc.nextInt();
+                        switch (option) {
+                            case 1:
+                                System.out.println("The Television will turn on");
+                                break;
+                            case 2:
+                                System.out.println("The Television will not turn on");
+                                break;
+                            case 3:
+                                exit = true;
+                                System.out.println("Successful, exit");
+                                break;
+                        }
+                    }                     
                     break;
                 case 6:
-                    break;
-                case 7:
-                    break;
-                case 8:
-                    break;
-                case 9:
-                    break;
-
+                    default:
+                    System.out.println("Choose an option");
             }
-        }
-        
+        }      
     }
 }
