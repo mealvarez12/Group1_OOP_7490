@@ -8,16 +8,13 @@ package ec.edu.espe.house.model;
 public class House {
     
     private String color;
-    private Room room = new Room(); 
+    private int[] room = new int[10]; 
     private Television television = new Television();
     private SoundSystem soundSystem = new SoundSystem();
     private AlarmSignal alarmSignal = new AlarmSignal();
 
-    public House() {
-        
-    }
-    
-    private void deControled() {
+
+    private void beControled() {
 
     }
 
@@ -25,6 +22,8 @@ public class House {
         this.color = color;
     }
 
+    
+    
     /**
      * @return the color
      */
@@ -42,14 +41,14 @@ public class House {
     /**
      * @return the room
      */
-    public Room getRoom() {
+    public int[] getRoom() {
         return room;
     }
 
     /**
      * @param room the room to set
      */
-    public void setRoom(Room room) {
+    public void setRoom(int[] room) {
         this.room = room;
     }
 
@@ -94,6 +93,6 @@ public class House {
     public void setAlarmSignal(AlarmSignal alarmSignal) {
         this.alarmSignal = alarmSignal;
     }
-    
-    
-}
+
+
+   

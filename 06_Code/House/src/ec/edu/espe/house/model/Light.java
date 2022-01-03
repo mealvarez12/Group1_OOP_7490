@@ -1,6 +1,10 @@
 
 package ec.edu.espe.house.model;
 
+import java.util.ArrayList;
+
+
+
 /**
  *
  * @author malvarez, altamiranoc, almachea, andradea, andrangoa
@@ -12,10 +16,6 @@ public class Light {
     private boolean on;
     private final boolean open;
 
-    public Light() {
- 
-    }
-
 
     private void turnOnLight() {
 
@@ -25,13 +25,17 @@ public class Light {
 
     }
 
-    public Light(String color, int potencyWatts) {
+    ArrayList<Light> lights = new  ArrayList<>();
+    
+ 
+    
+        public Light(String color, int potencyWatts, boolean on, boolean open) {
         this.color = color;
         this.potencyWatts = potencyWatts;
-        this.open = on;
+        this.on = on;
+        this.open = open;
     }
 
-    
     
     /**
      * @return the color

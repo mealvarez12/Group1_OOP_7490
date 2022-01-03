@@ -10,13 +10,7 @@ public class Room {
     private String size;
     private String color;
     private int numberOfRoom;
-    private Door door = new Door(numberOfRoom, numberOfRoom, color, numberOfRoom, size, true); 
-    private Light light = new Light();
 
-    public Room() {
-        
-    }
-    
     
     private void hasDoor() {
 
@@ -76,34 +70,4 @@ public class Room {
         this.numberOfRoom = numberOfRoom;
     }
 
-    /**
-     * @return the door
-     */
-    public Door getDoor() {
-        return door;
-    }
-
-    /**
-     * @param door the door to set
-     */
-    public void setDoor(Door door) {
-        this.door = door;
-    }
-
-    /**
-     * @return the light
-     */
-    public Light getLight() {
-        return light;
-    }
-
-    /**
-     * @param light the light to set
-     */
-    public void setLight(Light light) {
-        this.light = light;
-    }
-    
-    
-    
 }

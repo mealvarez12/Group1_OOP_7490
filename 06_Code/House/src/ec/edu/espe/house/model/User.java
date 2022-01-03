@@ -9,13 +9,9 @@ public class User {
     
     private String name;
     private int age;
-    private House house = new House();
     private Cellphone cellphone = new Cellphone();   
 
-    public User() {
-    
-    }
-    
+
     private void doTask() {
 
     }
@@ -54,19 +50,7 @@ public class User {
         this.age = age;
     }
 
-    /**
-     * @return the house
-     */
-    public House getHouse() {
-        return house;
-    }
 
-    /**
-     * @param house the house to set
-     */
-    public void setHouse(House house) {
-        this.house = house;
-    }
 
     /**
      * @return the cellphone
