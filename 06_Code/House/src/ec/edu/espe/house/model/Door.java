@@ -34,4 +34,5 @@ public class Door {
         this.open = open;
     }
     
+    
 }

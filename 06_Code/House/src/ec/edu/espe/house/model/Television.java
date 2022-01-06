@@ -30,4 +30,5 @@ public class Television extends Device {
     public void setId(int id) {
         this.id = id;
     }
+    
 }

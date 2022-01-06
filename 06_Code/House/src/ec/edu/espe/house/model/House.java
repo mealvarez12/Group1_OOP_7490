@@ -72,7 +72,6 @@ public class House {
     public void setAlarmSignal(int[] alarmSignal) {
         this.alarmSignal = alarmSignal;
     }
-
     
 }
 

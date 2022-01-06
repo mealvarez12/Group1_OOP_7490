@@ -72,4 +72,5 @@ public class User {
     public void setHouse(ArrayList<House> house) {
         this.house = house;
     }
+    
 }

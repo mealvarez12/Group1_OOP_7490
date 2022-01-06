@@ -66,6 +66,5 @@ public class Room {
         this.light = light;
     }
     
-    
 }
     
