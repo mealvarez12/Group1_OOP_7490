@@ -7,10 +7,15 @@ package ec.edu.espe.house.model;
  */
 public class Room {
     
-    private String size;
-    private String color;
-    private int numberOfRoom;
+    private String nameOfRoom;
+    private int []door = new int [2];
+    private int []light = new int [1];
 
+    public Room(String nameOfRoom) {
+        this.nameOfRoom = nameOfRoom;
+    }
+
+    
     
     private void hasDoor() {
 
@@ -20,54 +25,47 @@ public class Room {
 
     }
 
-    public Room(String size, String color, int numberOfRoom) {
-        this.size = size;
-        this.color = color;
-        this.numberOfRoom = numberOfRoom;
+    /**
+     * @return the nameOfRoom
+     */
+    public String getNameOfRoom() {
+        return nameOfRoom;
     }
 
+    /**
+     * @param nameOfRoom the nameOfRoom to set
+     */
+    public void setNameOfRoom(String nameOfRoom) {
+        this.nameOfRoom = nameOfRoom;
+    }
+
+    /**
+     * @return the door
+     */
+    public int[] getDoor() {
+        return door;
+    }
+
+    /**
+     * @param door the door to set
+     */
+    public void setDoor(int[] door) {
+        this.door = door;
+    }
+
+    /**
+     * @return the light
+     */
+    public int[] getLight() {
+        return light;
+    }
+
+    /**
+     * @param light the light to set
+     */
+    public void setLight(int[] light) {
+        this.light = light;
+    }
     
+    }
     
-    /**
-     * @return the size
-     */
-    public String getSize() {
-        return size;
-    }
-
-    /**
-     * @param size the size to set
-     */
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    /**
-     * @return the color
-     */
-    public String getColor() {
-        return color;
-    }
-
-    /**
-     * @param color the color to set
-     */
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    /**
-     * @return the numberOfRoom
-     */
-    public int getNumberOfRoom() {
-        return numberOfRoom;
-    }
-
-    /**
-     * @param numberOfRoom the numberOfRoom to set
-     */
-    public void setNumberOfRoom(int numberOfRoom) {
-        this.numberOfRoom = numberOfRoom;
-    }
-
-}
