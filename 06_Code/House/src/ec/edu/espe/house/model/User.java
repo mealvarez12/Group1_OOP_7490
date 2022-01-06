@@ -1,35 +1,25 @@
 
 package ec.edu.espe.house.model;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author grupo1
+ * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
 public class User {
     
     private String name;
     private int age;
-    private House house = new House();
-    private Cellphone cellphone = new Cellphone();   
-
-    public User() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public User() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    private void doTask() {
-
-    }
+    private int []cellphone = new int [1];
+    private ArrayList<House> house = new ArrayList<House>();
 
     public User(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-        
+    
     /**
      * @return the name
      */
@@ -59,33 +49,32 @@ public class User {
     }
 
     /**
-     * @return the house
-     */
-    public House getHouse() {
-        return house;
-    }
-
-    /**
-     * @param house the house to set
-     */
-    public void setHouse(House house) {
-        this.house = house;
-    }
-
-    /**
      * @return the cellphone
      */
-    public Cellphone getCellphone() {
+    public int[] getCellphone() {
         return cellphone;
     }
 
     /**
      * @param cellphone the cellphone to set
      */
-    public void setCellphone(Cellphone cellphone) {
+    public void setCellphone(int[] cellphone) {
         this.cellphone = cellphone;
     }
-    
+
+    /**
+     * @return the house
+     */
+    public ArrayList<House> getHouse() {
+        return house;
+    }
+
+    /**
+     * @param house the house to set
+     */
+    public void setHouse(ArrayList<House> house) {
+        this.house = house;
+    }
     
     
 }

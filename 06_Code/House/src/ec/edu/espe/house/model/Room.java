@@ -1,24 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.edu.espe.house.model;
 
 /**
  *
- * @author grupo1
+ * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
 public class Room {
     
-    private String size;
-    private String color;
-    private int numberOfRoom;
-    private Door door = new Door(numberOfRoom, numberOfRoom, color, numberOfRoom, size, true); 
-    private Light light = new Light();
+    private String nameOfRoom;
+    private int []door = new int [2];
+    private int []light = new int [1];
 
-    public Room() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Room(String nameOfRoom) {
+        this.nameOfRoom = nameOfRoom;
     }
+
     
     
     private void hasDoor() {
@@ -29,84 +25,47 @@ public class Room {
 
     }
 
-    public Room(String size, String color, int numberOfRoom) {
-        this.size = size;
-        this.color = color;
-        this.numberOfRoom = numberOfRoom;
-    }
-
-    
-    
     /**
-     * @return the size
+     * @return the nameOfRoom
      */
-    public String getSize() {
-        return size;
+    public String getNameOfRoom() {
+        return nameOfRoom;
     }
 
     /**
-     * @param size the size to set
+     * @param nameOfRoom the nameOfRoom to set
      */
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    /**
-     * @return the color
-     */
-    public String getColor() {
-        return color;
-    }
-
-    /**
-     * @param color the color to set
-     */
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    /**
-     * @return the numberOfRoom
-     */
-    public int getNumberOfRoom() {
-        return numberOfRoom;
-    }
-
-    /**
-     * @param numberOfRoom the numberOfRoom to set
-     */
-    public void setNumberOfRoom(int numberOfRoom) {
-        this.numberOfRoom = numberOfRoom;
+    public void setNameOfRoom(String nameOfRoom) {
+        this.nameOfRoom = nameOfRoom;
     }
 
     /**
      * @return the door
      */
-    public Door getDoor() {
+    public int[] getDoor() {
         return door;
     }
 
     /**
      * @param door the door to set
      */
-    public void setDoor(Door door) {
+    public void setDoor(int[] door) {
         this.door = door;
     }
 
     /**
      * @return the light
      */
-    public Light getLight() {
+    public int[] getLight() {
         return light;
     }
 
     /**
      * @param light the light to set
      */
-    public void setLight(Light light) {
+    public void setLight(int[] light) {
         this.light = light;
     }
     
+    }
     
-    
-}
