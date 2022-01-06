@@ -1,29 +1,22 @@
-
 package ec.edu.espe.house.model;
-
-import java.util.ArrayList;
-
-
 
 /**
  *
  * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
-public class Light {
-    
+public class Device {
     private boolean status;
 
-    public Light(boolean status) {
+    public Device(boolean status) {
         this.status = status;
     }
-
     
-
-    private void turnOnLight() {
-
+    
+    private void turnOn() {
+        
     }
     
-    private void turnOffLight() {
+    private void turnOff() {
 
     }
 
@@ -40,5 +33,5 @@ public class Light {
     public void setStatus(boolean status) {
         this.status = status;
     }
-
+    
 }
