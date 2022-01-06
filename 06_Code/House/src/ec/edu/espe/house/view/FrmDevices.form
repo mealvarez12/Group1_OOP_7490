@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup3">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup4">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup5">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup6">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,13 +37,26 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <Component id="BtnReturn" min="-2" pref="73" max="-2" attributes="0"/>
+              <EmptySpace pref="88" max="32767" attributes="0"/>
+              <Component id="BtnExit" min="-2" pref="73" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="BtnAlarmSignal" min="-2" pref="102" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="CmbDevices" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="BtnSoundSystem" min="-2" pref="92" max="-2" attributes="0"/>
+                  <Component id="BtnTelevision" min="-2" pref="92" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="83" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="91" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -38,9 +65,18 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Component id="CmbDevices" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="86" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="BtnTelevision" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="BtnSoundSystem" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="BtnAlarmSignal" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BtnExit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnReturn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -57,19 +93,45 @@
         <Property name="text" type="java.lang.String" value="DEVICES"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="CmbDevices">
+    <Component class="javax.swing.JButton" name="BtnExit">
       <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Television"/>
-            <StringItem index="1" value="Sound System"/>
-            <StringItem index="2" value="Alarm Signal"/>
-          </StringArray>
-        </Property>
+        <Property name="text" type="java.lang.String" value="Exit"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnExitActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnReturn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Return"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnReturnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnTelevision">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Television"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTelevisionActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnSoundSystem">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sound System "/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSoundSystemActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnAlarmSignal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Alarm Signal"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAlarmSignalActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
