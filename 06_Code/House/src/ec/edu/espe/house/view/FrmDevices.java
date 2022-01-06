@@ -132,6 +132,7 @@ public class FrmDevices extends javax.swing.JFrame {
         FrmWelcome FrmWelcome = new FrmWelcome();
         int result = JOptionPane.showConfirmDialog(FrmWelcome, "Would you like to turn on the TV?");
 
+<<<<<<< HEAD
         if (result == 0){
             System.out.println("You pressed Yes");
             JOptionPane.showMessageDialog(this, "You have turn on the TV");
@@ -140,6 +141,16 @@ public class FrmDevices extends javax.swing.JFrame {
             System.out.println("You pressed NO");
             JOptionPane.showMessageDialog(this, "You have turn off the TV");
         }
+=======
+        if (result == 0)
+            System.out.println("You pressed Yes");
+            JOptionPane.showMessageDialog(this, "You have turn on the TV");
+               
+        else if (result == 1)
+            System.out.println("You pressed NO");
+            JOptionPane.showMessageDialog(this, "You have turn off the TV");
+            
+>>>>>>> dad64de1cb6c1936bf91a3dbcafb659d47b0eb5d
         else
             System.out.println("You pressed Cancel");
     }//GEN-LAST:event_BtnTelevisionActionPerformed
@@ -148,6 +159,7 @@ public class FrmDevices extends javax.swing.JFrame {
         FrmWelcome FrmWelcome = new FrmWelcome();
         int result = JOptionPane.showConfirmDialog(FrmWelcome, "Would you like to turn on the Sound System?");        
         
+<<<<<<< HEAD
         if(result == 0){
             System.out.println("You pressed Yes");
             JOptionPane.showMessageDialog(this, "You have turn on the Sound System");
@@ -156,6 +168,16 @@ public class FrmDevices extends javax.swing.JFrame {
             System.out.println("You pressed NO");
             JOptionPane.showMessageDialog(this, "You have turn off the Sound System");
         }    
+=======
+        if (result == 0)
+            System.out.println("You pressed Yes");
+            JOptionPane.showMessageDialog(this, "You have turn on the Sound System");
+               
+        else if (result == 1)
+            System.out.println("You pressed NO");
+            JOptionPane.showMessageDialog(this, "You have turn off the Sound System");
+            
+>>>>>>> dad64de1cb6c1936bf91a3dbcafb659d47b0eb5d
         else
             System.out.println("You pressed Cancel");
     }//GEN-LAST:event_BtnSoundSystemActionPerformed
@@ -164,16 +186,28 @@ public class FrmDevices extends javax.swing.JFrame {
             FrmWelcome FrmWelcome = new FrmWelcome();
         int result = JOptionPane.showConfirmDialog(FrmWelcome, "Would you like to turn on the Alarm Signal?");        
         
+<<<<<<< HEAD
         if (result == 0){
             System.out.println("You pressed Yes");
             JOptionPane.showMessageDialog(this, "You have turn on the Alarm Signal");
         }    
         else if (result == 1){
+=======
+        if (result == 0)
+            System.out.println("You pressed Yes");
+            JOptionPane.showMessageDialog(this, "You have turn on the Alarm Signal");
+               
+        else if (result == 1)
+>>>>>>> dad64de1cb6c1936bf91a3dbcafb659d47b0eb5d
             System.out.println("You pressed NO");
             JOptionPane.showMessageDialog(this, "You have turn off the Alarm Signal");
     }//GEN-LAST:event_BtnAlarmSignalActionPerformed
 
     private void BtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExitActionPerformed
+<<<<<<< HEAD
+=======
+        System.exit(0);
+>>>>>>> dad64de1cb6c1936bf91a3dbcafb659d47b0eb5d
     }//GEN-LAST:event_BtnExitActionPerformed
 
     /**
