@@ -26,7 +26,6 @@ public class User {
     public String getName() {
         return name;
     }
-
     /**
      * @param name the name to set
      */
@@ -61,7 +60,6 @@ public class User {
     public void setCellphone(int[] cellphone) {
         this.cellphone = cellphone;
     }
-
     /**
      * @return the house
      */
@@ -75,6 +73,5 @@ public class User {
     public void setHouse(ArrayList<House> house) {
         this.house = house;
     }
-    
     
 }

@@ -13,7 +13,6 @@ public class RemoteControl {
     
     }
     
-    
     private void openDoor() {
 
     }
