@@ -8,7 +8,6 @@ public class Television extends Device {
     
     private int id;
 
-    
     public Television(int id, boolean status) {
         super(status);
         this.id = id;
@@ -31,5 +30,4 @@ public class Television extends Device {
     public void setId(int id) {
         this.id = id;
     }
-
 }
