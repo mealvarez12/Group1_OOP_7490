@@ -8,12 +8,12 @@ package ec.edu.espe.house.view;
  *
  * @author pc
  */
-public class FrmDevice extends javax.swing.JFrame {
+public class FrmRooms extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmDevice
      */
-    public FrmDevice() {
+    public FrmRooms() {
         initComponents();
     }
 
@@ -92,7 +92,7 @@ public class FrmDevice extends javax.swing.JFrame {
 
     private void BtnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReturnActionPerformed
         this.setVisible(false);
-        new FrmHouseController().setVisible(true); 
+        new FrmController().setVisible(true); 
 
     }//GEN-LAST:event_BtnReturnActionPerformed
 
@@ -113,20 +113,23 @@ public class FrmDevice extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmDevice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmRooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmDevice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmRooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmDevice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmRooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmDevice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmRooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmDevice().setVisible(true);
+                new FrmRooms().setVisible(true);
             }
         });
     }
