@@ -3,8 +3,6 @@ package ec.edu.espe.house.model;
 
 import java.util.ArrayList;
 
-
-
 /**
  *
  * @author malvarez, altamiranoc, almachea, andradea, andrangoa
@@ -22,6 +20,7 @@ public class Light {
     private void turnOnLight() {
 
     }
+    
     
     private void turnOffLight() {
 
@@ -41,4 +40,5 @@ public class Light {
         this.status = status;
     }
 
+    
 }

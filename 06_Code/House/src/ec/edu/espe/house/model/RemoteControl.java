@@ -8,7 +8,6 @@ package ec.edu.espe.house.model;
  */
 public class RemoteControl {
     
-
     public RemoteControl() {
     
     }
@@ -36,5 +35,6 @@ public class RemoteControl {
     private void turnOff() {
 
     }
+    
     
 }

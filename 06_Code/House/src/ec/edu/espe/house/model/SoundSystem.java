@@ -10,7 +10,9 @@ public class SoundSystem extends Device {
         super(status);
     }
     
+    
     private void addStation(){
         
     }
+    
 }

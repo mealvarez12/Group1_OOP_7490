@@ -73,7 +73,8 @@ public class House {
         this.alarmSignal = alarmSignal;
     }
 
-    }
+    
+}
 
 
    

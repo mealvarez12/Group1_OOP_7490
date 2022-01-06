@@ -11,5 +11,4 @@ public class AlarmSignal extends Device {
         super(status);
     }
     
-    
 }

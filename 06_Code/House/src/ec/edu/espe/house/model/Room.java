@@ -15,6 +15,7 @@ public class Room {
         this.nameOfRoom = nameOfRoom;
     }
 
+    
     private void hasDoor() {
 
     }
@@ -64,6 +65,7 @@ public class Room {
     public void setLight(int[] light) {
         this.light = light;
     }
+    
     
 }
     

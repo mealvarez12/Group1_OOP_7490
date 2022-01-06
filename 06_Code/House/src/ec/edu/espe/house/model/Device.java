@@ -11,6 +11,7 @@ public class Device {
         this.status = status;
     }
     
+    
     private void turnOn() {
         
     }
