@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package ec.edu.espe.house.view;
 
 import javax.swing.JOptionPane;
@@ -235,10 +232,14 @@ public class User extends javax.swing.JFrame {
          FrmWelcome FrmWelcome = new FrmWelcome();
         int result = JOptionPane.showConfirmDialog(FrmWelcome, "Welcome to the System House, do you want to continue?");
 
-        if (result == 0)
+        if (result == 0){
             System.out.println("You pressed Yes");
-        else if (result == 1)
+            new FrmController().setVisible(true);
+        }
+        else if (result == 1){
             System.out.println("You pressed NO");
+        }
+              
         else
             System.out.println("You pressed Cancel");
     }//GEN-LAST:event_BtnLoginActionPerformed

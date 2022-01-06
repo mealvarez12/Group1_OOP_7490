@@ -173,11 +173,9 @@ public class SystemHouse {
                     }
                     break;
                 case 6:
-<<<<<<< HEAD
                     exit=true;
                     break;
-=======
->>>>>>> 94f956bc65960ca4ef65dd56bf9698a685940fd9
+
                 default:
                     System.out.println("Choose an option");
                     break;

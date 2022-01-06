@@ -8,11 +8,9 @@ package ec.edu.espe.house.model;
  */
 public class RemoteControl {
     
-
     public RemoteControl() {
     
     }
-    
     
     private void openDoor() {
 
