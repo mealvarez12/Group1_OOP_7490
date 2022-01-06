@@ -170,11 +170,19 @@ public class FrmController extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnDevicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDevicesActionPerformed
+<<<<<<< HEAD
           new FrmDevices().setVisible(true);
     }//GEN-LAST:event_BtnDevicesActionPerformed
 
     private void BtnRoomsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRoomsActionPerformed
           new FrmRooms().setVisible(true);
+=======
+        new FrmRooms().setVisible(true);
+    }//GEN-LAST:event_BtnDevicesActionPerformed
+
+    private void BtnRoomsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRoomsActionPerformed
+        new FrmDevices().setVisible(true);
+>>>>>>> 94f956bc65960ca4ef65dd56bf9698a685940fd9
     }//GEN-LAST:event_BtnRoomsActionPerformed
 
     /**
