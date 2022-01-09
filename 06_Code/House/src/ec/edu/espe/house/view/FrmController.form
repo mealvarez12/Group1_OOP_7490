@@ -43,9 +43,9 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Component id="btnReturn" min="-2" pref="73" max="-2" attributes="0"/>
+              <Component id="btnReturnPrincipalMenu" min="-2" pref="73" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="BtnExit" min="-2" pref="73" max="-2" attributes="0"/>
+              <Component id="BtnExitPrincipalMenu" min="-2" pref="73" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -61,11 +61,11 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="210" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="225" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnReturn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BtnExit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnReturnPrincipalMenu" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnExitPrincipalMenu" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -79,23 +79,25 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" pref="64" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="BtnDevices" min="-2" pref="73" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel11" min="-2" pref="64" max="-2" attributes="0"/>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="BtnDevices" min="-2" pref="73" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" pref="335" max="32767" attributes="0"/>
@@ -122,7 +124,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="BtnDevices" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnDevices" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnRooms" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -233,21 +235,30 @@
           <Image iconType="3" name="/Images/alarm icon.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAlarmSignalActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Alarm Signal"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnReturn">
+    <Component class="javax.swing.JButton" name="btnReturnPrincipalMenu">
       <Properties>
         <Property name="text" type="java.lang.String" value="Return"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReturnPrincipalMenuActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="BtnExit">
+    <Component class="javax.swing.JButton" name="BtnExitPrincipalMenu">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnExitPrincipalMenuActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

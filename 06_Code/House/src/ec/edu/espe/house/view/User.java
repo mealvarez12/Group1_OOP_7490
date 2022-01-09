@@ -235,13 +235,9 @@ public class User extends javax.swing.JFrame {
         if (result == 0){
             System.out.println("You pressed Yes");
             new FrmController().setVisible(true);
-<<<<<<< HEAD
+
         }
         else if (result == 1){
-=======
-        
-        else if (result == 1)
->>>>>>> dad64de1cb6c1936bf91a3dbcafb659d47b0eb5d
             System.out.println("You pressed NO");
         }
               

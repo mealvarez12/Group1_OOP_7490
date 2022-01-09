@@ -39,22 +39,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-              <Component id="BtnReturn" min="-2" pref="73" max="-2" attributes="0"/>
+              <Component id="BtnReturnDevice" min="-2" pref="73" max="-2" attributes="0"/>
               <EmptySpace pref="88" max="32767" attributes="0"/>
-              <Component id="BtnExit" min="-2" pref="73" max="-2" attributes="0"/>
+              <Component id="BtnExitDevice" min="-2" pref="73" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="BtnAlarmSignal" min="-2" pref="102" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="BtnSoundSystem" min="-2" pref="92" max="-2" attributes="0"/>
-                  <Component id="BtnTelevision" min="-2" pref="92" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="83" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="83" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="BtnSoundSystem" pref="120" max="32767" attributes="0"/>
+                          <Component id="BtnTelevision" max="32767" attributes="0"/>
+                          <Component id="BtnLight" max="32767" attributes="0"/>
+                          <Component id="BtnDoor" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -65,16 +69,18 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="BtnTelevision" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="BtnSoundSystem" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="BtnAlarmSignal" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="BtnLight" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="BtnDoor" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BtnExit" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BtnReturn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnExitDevice" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnReturnDevice" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
@@ -93,20 +99,20 @@
         <Property name="text" type="java.lang.String" value="DEVICES"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="BtnExit">
+    <Component class="javax.swing.JButton" name="BtnExitDevice">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exit"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnExitActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnExitDeviceActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="BtnReturn">
+    <Component class="javax.swing.JButton" name="BtnReturnDevice">
       <Properties>
         <Property name="text" type="java.lang.String" value="Return"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnReturnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnReturnDeviceActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BtnTelevision">
@@ -125,12 +131,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSoundSystemActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="BtnAlarmSignal">
+    <Component class="javax.swing.JButton" name="BtnLight">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Alarm Signal"/>
+        <Property name="text" type="java.lang.String" value="Light"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAlarmSignalActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnLightActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnDoor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Door"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnDoorActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

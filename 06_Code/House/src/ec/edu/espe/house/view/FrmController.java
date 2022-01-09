@@ -1,6 +1,8 @@
 
 package ec.edu.espe.house.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author malvarez, altamiranoc, almachea, andradea, andrangoa
@@ -37,8 +39,8 @@ public class FrmController extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         BtnAlarmSignal = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        btnReturn = new javax.swing.JButton();
-        BtnExit = new javax.swing.JButton();
+        btnReturnPrincipalMenu = new javax.swing.JButton();
+        BtnExitPrincipalMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,20 +79,21 @@ public class FrmController extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                        .addGap(39, 39, 39)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BtnDevices, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                        .addGap(35, 35, 35)
                         .addComponent(jLabel9))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                        .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BtnDevices, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 335, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
@@ -138,12 +141,27 @@ public class FrmController extends javax.swing.JFrame {
         jLabel1.setText("What do you want to controll ?");
 
         BtnAlarmSignal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/alarm icon.png"))); // NOI18N
+        BtnAlarmSignal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAlarmSignalActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Alarm Signal");
 
-        btnReturn.setText("Return");
+        btnReturnPrincipalMenu.setText("Return");
+        btnReturnPrincipalMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnPrincipalMenuActionPerformed(evt);
+            }
+        });
 
-        BtnExit.setText("Exit");
+        BtnExitPrincipalMenu.setText("Exit");
+        BtnExitPrincipalMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnExitPrincipalMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,9 +183,9 @@ public class FrmController extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(btnReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnReturnPrincipalMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnExitPrincipalMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
         );
         layout.setVerticalGroup(
@@ -180,11 +198,11 @@ public class FrmController extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReturn)
-                    .addComponent(BtnExit))
+                    .addComponent(btnReturnPrincipalMenu)
+                    .addComponent(BtnExitPrincipalMenu))
                 .addContainerGap())
         );
 
@@ -200,6 +218,32 @@ public class FrmController extends javax.swing.JFrame {
     private void BtnRoomsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRoomsActionPerformed
             new FrmRooms().setVisible(true);
     }//GEN-LAST:event_BtnRoomsActionPerformed
+
+    private void BtnAlarmSignalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAlarmSignalActionPerformed
+            FrmWelcome FrmWelcome = new FrmWelcome();
+        int result = JOptionPane.showConfirmDialog(FrmWelcome, "Would you like to turn on the Alarm Signal?");        
+        
+
+        if (result == 0){
+            System.out.println("You pressed Yes");
+            JOptionPane.showMessageDialog(this, "You have turn on the Alarm Signal");
+        }    
+        else if (result == 1)
+
+            System.out.println("You pressed NO");
+            JOptionPane.showMessageDialog(this, "You have turn off the Alarm Signal");
+    }//GEN-LAST:event_BtnAlarmSignalActionPerformed
+
+    private void btnReturnPrincipalMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnPrincipalMenuActionPerformed
+        User User = new User();
+        User.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnReturnPrincipalMenuActionPerformed
+
+    private void BtnExitPrincipalMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExitPrincipalMenuActionPerformed
+        System.exit(0);
+
+    }//GEN-LAST:event_BtnExitPrincipalMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,9 +284,9 @@ public class FrmController extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAlarmSignal;
     private javax.swing.JButton BtnDevices;
-    private javax.swing.JButton BtnExit;
+    private javax.swing.JButton BtnExitPrincipalMenu;
     private javax.swing.JButton BtnRooms;
-    private javax.swing.JButton btnReturn;
+    private javax.swing.JButton btnReturnPrincipalMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
