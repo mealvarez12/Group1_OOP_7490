@@ -16,7 +16,6 @@ public class Room {
     }
 
     
-    
     private void hasDoor() {
 
     }
@@ -67,5 +66,5 @@ public class Room {
         this.light = light;
     }
     
-    }
+}
     

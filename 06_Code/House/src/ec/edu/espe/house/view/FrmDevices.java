@@ -1,12 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package ec.edu.espe.house.view;
+
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author pc
+ * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
 public class FrmDevices extends javax.swing.JFrame {
 
@@ -26,8 +25,19 @@ public class FrmDevices extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup6 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        CmbDevices = new javax.swing.JComboBox<>();
+        BtnExitDevice = new javax.swing.JButton();
+        BtnReturnDevice = new javax.swing.JButton();
+        BtnTelevision = new javax.swing.JButton();
+        BtnSoundSystem = new javax.swing.JButton();
+        BtnLight = new javax.swing.JButton();
+        BtnDoor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -35,31 +45,173 @@ public class FrmDevices extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setText("DEVICES");
 
-        CmbDevices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Television", "Sound System", "Alarm Signal" }));
+        BtnExitDevice.setText("Exit");
+        BtnExitDevice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnExitDeviceActionPerformed(evt);
+            }
+        });
+
+        BtnReturnDevice.setText("Return");
+        BtnReturnDevice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnReturnDeviceActionPerformed(evt);
+            }
+        });
+
+        BtnTelevision.setText("Television");
+        BtnTelevision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTelevisionActionPerformed(evt);
+            }
+        });
+
+        BtnSoundSystem.setText("Sound System ");
+        BtnSoundSystem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSoundSystemActionPerformed(evt);
+            }
+        });
+
+        BtnLight.setText("Light");
+        BtnLight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLightActionPerformed(evt);
+            }
+        });
+
+        BtnDoor.setText("Door");
+        BtnDoor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDoorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(BtnReturnDevice, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addComponent(BtnExitDevice, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
             .addGroup(layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(CmbDevices, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BtnSoundSystem, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(BtnTelevision, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnLight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnDoor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(44, 44, 44)
-                .addComponent(CmbDevices, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnTelevision)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnSoundSystem)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnLight)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnDoor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnExitDevice)
+                    .addComponent(BtnReturnDevice))
+                .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnReturnDeviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReturnDeviceActionPerformed
+        FrmController FrmController = new FrmController();
+        FrmController.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BtnReturnDeviceActionPerformed
+
+    private void BtnTelevisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTelevisionActionPerformed
+        FrmWelcome FrmWelcome = new FrmWelcome();
+        int result = JOptionPane.showConfirmDialog(FrmWelcome, "Would you like to turn on the TV?");
+
+        if (result == 0){
+            System.out.println("You pressed Yes");
+            JOptionPane.showMessageDialog(this, "You have turn on the TV");
+        }
+        else if (result == 1){
+            System.out.println("You pressed NO");
+            JOptionPane.showMessageDialog(this, "You have turn off the TV");
+        }
+
+        else
+            System.out.println("You pressed Cancel");
+    }//GEN-LAST:event_BtnTelevisionActionPerformed
+
+    private void BtnSoundSystemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSoundSystemActionPerformed
+        FrmWelcome FrmWelcome = new FrmWelcome();
+        int result = JOptionPane.showConfirmDialog(FrmWelcome, "Would you like to turn on the Sound System?");        
+        
+
+        if(result == 0){
+            System.out.println("You pressed Yes");
+            JOptionPane.showMessageDialog(this, "You have turn on the Sound System");
+        }
+        else if (result == 1){
+            System.out.println("You pressed NO");
+            JOptionPane.showMessageDialog(this, "You have turn off the Sound System");
+        }    
+
+        else
+            System.out.println("You pressed Cancel");
+    }//GEN-LAST:event_BtnSoundSystemActionPerformed
+
+    private void BtnExitDeviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExitDeviceActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_BtnExitDeviceActionPerformed
+
+    private void BtnLightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLightActionPerformed
+        FrmWelcome FrmWelcome = new FrmWelcome();
+        int result = JOptionPane.showConfirmDialog(FrmWelcome, "Would you like to turn on the Light?");
+
+        if (result == 0){
+            System.out.println("You pressed Yes");
+            JOptionPane.showMessageDialog(this, "You have turn on the Light");
+        }
+        else if (result == 1){
+            System.out.println("You pressed NO");
+            JOptionPane.showMessageDialog(this, "You have turn off the Light");
+        }
+
+        else
+            System.out.println("You pressed Cancel");
+    }//GEN-LAST:event_BtnLightActionPerformed
+
+    private void BtnDoorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDoorActionPerformed
+        FrmWelcome FrmWelcome = new FrmWelcome();
+        int result = JOptionPane.showConfirmDialog(FrmWelcome, "Would you like open the door?");
+
+        if (result == 0){
+            System.out.println("You pressed Yes");
+            JOptionPane.showMessageDialog(this, "You have open the door");
+        }
+        else if (result == 1){
+            System.out.println("You pressed NO");
+            JOptionPane.showMessageDialog(this, "You have close yhe door");
+        }
+
+        else
+            System.out.println("You pressed Cancel");
+    }//GEN-LAST:event_BtnDoorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,15 +242,24 @@ public class FrmDevices extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmDevices().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new FrmDevices().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> CmbDevices;
+    private javax.swing.JButton BtnDoor;
+    private javax.swing.JButton BtnExitDevice;
+    private javax.swing.JButton BtnLight;
+    private javax.swing.JButton BtnReturnDevice;
+    private javax.swing.JButton BtnSoundSystem;
+    private javax.swing.JButton BtnTelevision;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
