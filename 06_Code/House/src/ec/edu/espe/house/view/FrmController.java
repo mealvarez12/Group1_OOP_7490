@@ -235,7 +235,11 @@ public class FrmController extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnAlarmSignalActionPerformed
 
     private void btnReturnPrincipalMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnPrincipalMenuActionPerformed
+<<<<<<< HEAD
         FrmUser User = new FrmUser();
+=======
+        User User = new User();
+>>>>>>> e9d1489fc65a65a8a7f3e03b0cef3de513e4ec5e
         User.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnReturnPrincipalMenuActionPerformed
