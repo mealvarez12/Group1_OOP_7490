@@ -137,11 +137,11 @@ public class FrmDevices extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "You have turn on the TV");
                
         else if (result == 1)
-            System.out.println("You pressed NO");
-            JOptionPane.showMessageDialog(this, "You have turn off the TV");
+           System.out.println("You pressed NO");
+           JOptionPane.showMessageDialog(this, "You have turn off the TV");
             
-        else
-            System.out.println("You pressed Cancel");
+      //  else
+       //     System.out.println("You pressed Cancel");
     }//GEN-LAST:event_BtnTelevisionActionPerformed
 
     private void BtnSoundSystemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSoundSystemActionPerformed
