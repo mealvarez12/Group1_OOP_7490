@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package ec.edu.espe.house.view;
 
 import javax.swing.JOptionPane;
@@ -7,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author pc
  */
-public class FrmUser extends javax.swing.JFrame {
+public class User extends javax.swing.JFrame {
 
     /**
      * Creates new form HouseController
      */
-    public FrmUser() {
+    public User() {
         initComponents();
     }
 
@@ -120,11 +123,6 @@ public class FrmUser extends javax.swing.JFrame {
         );
 
         BtnAddUser.setText("Add User");
-        BtnAddUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAddUserActionPerformed(evt);
-            }
-        });
 
         BtnDeleteUser.setText("Delete User");
 
@@ -237,23 +235,15 @@ public class FrmUser extends javax.swing.JFrame {
          FrmWelcome FrmWelcome = new FrmWelcome();
         int result = JOptionPane.showConfirmDialog(FrmWelcome, "Welcome to the System House, do you want to continue?");
 
-        if (result == 0){
+        if (result == 0)
             System.out.println("You pressed Yes");
             new FrmController().setVisible(true);
-
-        }
-        else if (result == 1){
+        
+        else if (result == 1)
             System.out.println("You pressed NO");
-        }
-              
         else
             System.out.println("You pressed Cancel");
     }//GEN-LAST:event_BtnLoginActionPerformed
-
-    private void BtnAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddUserActionPerformed
-        FrmAddUser FrmAddUser = new FrmAddUser();
-        new FrmAddUser().setVisible(true);
-    }//GEN-LAST:event_BtnAddUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,18 +262,14 @@ public class FrmUser extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -292,7 +278,7 @@ public class FrmUser extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmUser().setVisible(true);
+                new User().setVisible(true);
             }
         });
     }
