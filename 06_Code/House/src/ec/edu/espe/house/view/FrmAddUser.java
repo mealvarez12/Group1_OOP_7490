@@ -1,28 +1,49 @@
 
 package ec.edu.espe.house.view;
 
-import ec.edu.espe.house.model.Person;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.result.DeleteResult;
+import ec.edu.espe.house.model.Connection;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.bson.Document;
+import org.bson.types.ObjectId;
 
 /**
  *
  * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
-public class FrmAddUser extends javax.swing.JFrame {                 // Ventana donde esta la Jtable
-    
-    DefaultTableModel model;                       //Palabra reservada
-    String[] user = new String[5];                   // Creo un Array con el numero de columnas
+public class FrmAddUser extends javax.swing.JFrame {          // Ventana donde esta la Jtable
       
-    public FrmAddUser(){                                             // Creo un metodo con el mismo nombre de la ventana
+    MongoCollection<Document> User = new Connection().obtenerDB().getCollection("User");
+    DefaultTableModel table = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false; //To change body of generated methods, choose Tools | Templates.
+        }
         
-       initComponents();  
-       model =  (DefaultTableModel) JtableUser.getModel();                 //Nombre de la variable Jtable
-        
+    };
     
-}
-
+       
+    public FrmAddUser(){           // Creo un metodo con el mismo nombre de la ventana
+        
+        initComponents(); 
+        
+        JtableUser.setModel(table);
+        
+        table.addColumn("ID Cloud");
+        table.addColumn("Name");   //Crea las columnas de la tabla 
+        table.addColumn("Last Name");
+        table.addColumn("User");
+        table.addColumn("CI");
+        table.addColumn("Cellphone");
+        
+        view();
+        
+    }
+      
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,6 +55,8 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -44,8 +67,6 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
         BtnAdd = new javax.swing.JButton();
         BtnDelete = new javax.swing.JButton();
         BtnExit = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        JtableUser = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         TxtLastName = new javax.swing.JTextField();
@@ -53,6 +74,9 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
         TxtUser = new javax.swing.JTextField();
         BtnReturn = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        BtnShowUsers = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        JtableUser = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,6 +90,19 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,16 +136,6 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
             }
         });
 
-        JtableUser.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Name", "Last Name", "User", "C.I.", "Cellphone"
-            }
-        ));
-        jScrollPane2.setViewportView(JtableUser);
-
         jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 2, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 255));
         jLabel4.setText("Add New User");
@@ -127,48 +154,74 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/business_application_addmale_useradd_insert_add_user_client_2312.png"))); // NOI18N
 
+        BtnShowUsers.setBackground(new java.awt.Color(255, 255, 102));
+        BtnShowUsers.setText("Show Users");
+        BtnShowUsers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnShowUsersActionPerformed(evt);
+            }
+        });
+
+        JtableUser.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "", "", "", "", "", ""
+            }
+        ));
+        jScrollPane4.setViewportView(JtableUser);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel3))
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TxtName)
-                            .addComponent(TxtLastName)
-                            .addComponent(TxtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-                            .addComponent(TxtCi)
-                            .addComponent(TxtCellphone))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(47, 47, 47)
                 .addComponent(BtnAdd)
-                .addGap(67, 67, 67)
-                .addComponent(BtnDelete)
-                .addGap(77, 77, 77)
-                .addComponent(BtnReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtnExit)
-                .addGap(70, 70, 70))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7)
                         .addGap(78, 78, 78))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 38, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel6))
+                                        .addGap(26, 26, 26)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(TxtName)
+                                            .addComponent(TxtLastName)
+                                            .addComponent(TxtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                                            .addComponent(TxtCi)
+                                            .addComponent(TxtCellphone)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(BtnDelete)
+                                        .addGap(43, 43, 43)
+                                        .addComponent(BtnShowUsers)
+                                        .addGap(27, 27, 27)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(BtnExit)
+                        .addGap(49, 49, 49))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 22, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,14 +255,15 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
                             .addComponent(BtnAdd)
                             .addComponent(BtnDelete)
                             .addComponent(BtnReturn)
-                            .addComponent(BtnExit))
-                        .addGap(34, 34, 34))
+                            .addComponent(BtnExit)
+                            .addComponent(BtnShowUsers))
+                        .addGap(41, 41, 41)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7)
-                        .addGap(116, 116, 116)))
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
+                        .addGap(288, 288, 288))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -219,7 +273,7 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,14 +287,25 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
     }// </editor-fold>//GEN-END:initComponents
  
     private void BtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddActionPerformed
-        user[0]= TxtName.getText();                         //Nombre de cada variable de tipo Text Field
-        user[1]= TxtLastName.getText();
-        user[2]= TxtUser.getText();
-        user[3] = TxtCi.getText();   
-        user[4] = TxtCellphone.getText();
-
-        model.addRow(user);
-
+        
+        try {                                //Hace la conexion a la base de datos
+            Document data = new Document();
+                       
+            data.put("Name", TxtName.getText());
+            data.put("Last Name", TxtLastName.getText());
+            data.put("User", TxtUser.getText());
+            data.put("CI", Integer.parseInt(TxtCi.getText()));
+            data.put("Cellphone", Integer.parseInt(TxtCellphone.getText()));
+            
+            // "User" es el objeto que estoy creando en la nube
+            
+            User.insertOne(data);    // Crea una fila del objeto User  
+            
+            JOptionPane.showMessageDialog(this, "Succesfull user login");
+           
+        } catch(Exception err){
+            JOptionPane.showMessageDialog(this, "There was an error adding the User");
+          }
     }//GEN-LAST:event_BtnAddActionPerformed
 
     private void BtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExitActionPerformed
@@ -254,13 +319,27 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
     }//GEN-LAST:event_BtnReturnActionPerformed
 
     private void BtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDeleteActionPerformed
-            if(JtableUser.getSelectedRow()!= -1){                                      //Nombre de la variable Jtable
-            model.removeRow(JtableUser.getSelectedRow());
-        }else{
-                JOptionPane.showMessageDialog(null, "You have not selected a register");
-                }
-
+        int renglon = JtableUser.getSelectedRow();
+        if(renglon == -1){
+            JOptionPane.showMessageDialog(this, "Error, Select the user to delete");
+            return;
+        }
+        String idRemove = JtableUser.getValueAt(renglon, 0).toString();
+        int respuesta = JOptionPane.showConfirmDialog(this, "Are you shure to delete the user?");
+        if(respuesta == JOptionPane.OK_OPTION){
+            boolean answerDelete = Delete(idRemove);
+            if(answerDelete==true){
+                view();
+                JOptionPane.showMessageDialog(this, "The user was successfully deleted");
+            }else{
+                JOptionPane.showMessageDialog(this, "The user could not been deleted");
+            }
+        }     
     }//GEN-LAST:event_BtnDeleteActionPerformed
+
+    private void BtnShowUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnShowUsersActionPerformed
+        view();
+    }//GEN-LAST:event_BtnShowUsersActionPerformed
     
     /**
      * @param args the command line arguments
@@ -297,12 +376,35 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
             }
         });
     }
+    
+    public boolean Delete(String id){
+        DeleteResult answer = User.deleteOne(new Document("_id", new ObjectId(id)));
+        if(answer.getDeletedCount()==1){
+            return true;
+        }
+        return false;
+    }
+    
+    public void view(){
+        
+        MongoCursor<Document> consulta = User.find().iterator();
+        
+        int total = table.getRowCount();
+        for(int i = 0; i<total; i++){
+            table.removeRow(0);
+        }
+        while(consulta.hasNext()){
+            ArrayList<Object> doc = new ArrayList<Object>(consulta.next().values());
+            table.addRow(doc.toArray());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAdd;
     private javax.swing.JButton BtnDelete;
     private javax.swing.JButton BtnExit;
     private javax.swing.JButton BtnReturn;
+    private javax.swing.JButton BtnShowUsers;
     private javax.swing.JTable JtableUser;
     private javax.swing.JTextField TxtCellphone;
     private javax.swing.JTextField TxtCi;
@@ -318,8 +420,12 @@ public class FrmAddUser extends javax.swing.JFrame {                 // Ventana 
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
+
+
 
 }

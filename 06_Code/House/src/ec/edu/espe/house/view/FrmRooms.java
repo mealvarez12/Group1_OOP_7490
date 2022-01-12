@@ -93,7 +93,7 @@ public class FrmRooms extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Bathroom");
 
-        CmbBathroom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Light", "Room" }));
+        CmbBathroom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Light", "Door" }));
         CmbBathroom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CmbBathroomActionPerformed(evt);
@@ -316,7 +316,7 @@ public class FrmRooms extends javax.swing.JFrame {
                  }    
                  else if (result == 1)
 
-                  JOptionPane.showMessageDialog(this, "You have opened the door of the Living Room");    //Mensaje en NO           
+                  JOptionPane.showMessageDialog(this, "You have closed the door of the Living Room");    //Mensaje en NO           
             
         }
  
@@ -347,7 +347,7 @@ public class FrmRooms extends javax.swing.JFrame {
                  }    
                  else if (result == 1)
 
-                  JOptionPane.showMessageDialog(this, "You have opened the door of the Kitchen");    //Mensaje en NO           
+                  JOptionPane.showMessageDialog(this, "You have closed the door of the Kitchen");    //Mensaje en NO           
             
         }
         
@@ -377,7 +377,7 @@ public class FrmRooms extends javax.swing.JFrame {
                  }    
                  else if (result == 1)
 
-                  JOptionPane.showMessageDialog(this, "You have opened the door of the Bathroom");    //Mensaje en NO           
+                  JOptionPane.showMessageDialog(this, "You have closed the door of the Bathroom");    //Mensaje en NO           
             
         }
     }//GEN-LAST:event_CmbBathroomActionPerformed
@@ -406,7 +406,7 @@ public class FrmRooms extends javax.swing.JFrame {
                  }    
                  else if (result == 1)
 
-                  JOptionPane.showMessageDialog(this, "You have opened the door of the Bedroom 1");    //Mensaje en NO           
+                  JOptionPane.showMessageDialog(this, "You have closed the door of the Bedroom 1");    //Mensaje en NO           
             
         }
     }//GEN-LAST:event_CbmBedroom1ActionPerformed
@@ -435,7 +435,7 @@ public class FrmRooms extends javax.swing.JFrame {
                  }    
                  else if (result == 1)
 
-                  JOptionPane.showMessageDialog(this, "You have opened the door of the Bedroom 2");    //Mensaje en NO           
+                  JOptionPane.showMessageDialog(this, "You have closed the door of the Bedroom 2");    //Mensaje en NO           
             
         }
     }//GEN-LAST:event_CmbBedroom2ActionPerformed
@@ -464,7 +464,7 @@ public class FrmRooms extends javax.swing.JFrame {
                  }    
                  else if (result == 1)
 
-                  JOptionPane.showMessageDialog(this, "You have opened the door of the Bedroom 3");    //Mensaje en NO           
+                  JOptionPane.showMessageDialog(this, "You have closed the door of the Bedroom 3");    //Mensaje en NO           
             
         }
     }//GEN-LAST:event_CmbBedroom3ActionPerformed

@@ -36,7 +36,7 @@ public class FrmUser extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         BtnAddUser = new javax.swing.JButton();
-        BtnShowListOfUsers = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -44,7 +44,8 @@ public class FrmUser extends javax.swing.JFrame {
         MnuHouseSystem = new javax.swing.JMenu();
         ItmAbout = new javax.swing.JMenuItem();
         ItmExit = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        MnuGroup1 = new javax.swing.JMenu();
+        ItmStudents = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,8 +145,8 @@ public class FrmUser extends javax.swing.JFrame {
             }
         });
 
-        BtnShowListOfUsers.setBackground(new java.awt.Color(204, 255, 204));
-        BtnShowListOfUsers.setText("Show List of User");
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setText("Choose these option to create a Data Base of House's users");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -154,21 +155,21 @@ public class FrmUser extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(BtnShowListOfUsers))
+                        .addContainerGap()
+                        .addComponent(jLabel7))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
+                        .addGap(161, 161, 161)
                         .addComponent(BtnAddUser)))
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(BtnAddUser)
-                .addGap(18, 18, 18)
-                .addComponent(BtnShowListOfUsers)
-                .addGap(23, 23, 23))
+                .addGap(32, 32, 32))
         );
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 255));
@@ -184,6 +185,11 @@ public class FrmUser extends javax.swing.JFrame {
         MnuHouseSystem.setText("House System");
 
         ItmAbout.setText("About");
+        ItmAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItmAboutActionPerformed(evt);
+            }
+        });
         MnuHouseSystem.add(ItmAbout);
 
         ItmExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -197,8 +203,22 @@ public class FrmUser extends javax.swing.JFrame {
 
         jMenuBar1.add(MnuHouseSystem);
 
-        jMenu2.setText("Group1");
-        jMenuBar1.add(jMenu2);
+        MnuGroup1.setText("Group1");
+        MnuGroup1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnuGroup1ActionPerformed(evt);
+            }
+        });
+
+        ItmStudents.setText("Students");
+        ItmStudents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItmStudentsActionPerformed(evt);
+            }
+        });
+        MnuGroup1.add(ItmStudents);
+
+        jMenuBar1.add(MnuGroup1);
 
         setJMenuBar(jMenuBar1);
 
@@ -211,14 +231,14 @@ public class FrmUser extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(87, 87, 87))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(jLabel5)))
+                        .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -236,7 +256,7 @@ public class FrmUser extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addGap(42, 42, 42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -259,7 +279,7 @@ public class FrmUser extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnExitActionPerformed
 
     private void BtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLoginActionPerformed
-        String User = "Michelle";
+        String User = "group1";
         String Password = "group1";
         
         String Pass = new String(PswPassword.getPassword());          //Nombre de la variable Password Field
@@ -280,6 +300,28 @@ public class FrmUser extends javax.swing.JFrame {
         this.setVisible(false); 
         new FrmAddUser().setVisible(true);
     }//GEN-LAST:event_BtnAddUserActionPerformed
+
+    private void MnuGroup1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnuGroup1ActionPerformed
+
+    }//GEN-LAST:event_MnuGroup1ActionPerformed
+
+    private void ItmStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmStudentsActionPerformed
+        JOptionPane.showMessageDialog(this, "***STUDENTS LIST***\nAlmache Litardo Anderson Moises\n" +
+        "Altamirano Benalcazar Cristhian Alexander\n" +
+        "Alvarez Ramirez Michelle Estefania\n" +
+        "Andrade Carate Alan Damian\n" +
+        "Andrango Espinosa Alex Paul");
+    }//GEN-LAST:event_ItmStudentsActionPerformed
+
+    private void ItmAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmAboutActionPerformed
+        JOptionPane.showMessageDialog(this, "The main house functions that can be controlled are the following:\n\n" + 
+        "Open and close the doors\n" +
+        "Turn on and off the lights in each room\n" +
+        "Turn on and off the television\n" +
+        "Turn on and off the sound system\n" +
+        "Activate and deactivate an alarm signal in emergencies");
+    
+    }//GEN-LAST:event_ItmAboutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,9 +369,10 @@ public class FrmUser extends javax.swing.JFrame {
     private javax.swing.JButton BtnAddUser;
     private javax.swing.JButton BtnExit;
     private javax.swing.JButton BtnLogin;
-    private javax.swing.JButton BtnShowListOfUsers;
     private javax.swing.JMenuItem ItmAbout;
     private javax.swing.JMenuItem ItmExit;
+    private javax.swing.JMenuItem ItmStudents;
+    private javax.swing.JMenu MnuGroup1;
     private javax.swing.JMenu MnuHouseSystem;
     private javax.swing.JPasswordField PswPassword;
     private javax.swing.JTextField TxtUserName;
@@ -339,7 +382,7 @@ public class FrmUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
