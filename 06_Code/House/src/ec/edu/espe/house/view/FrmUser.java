@@ -1,4 +1,3 @@
-
 package ec.edu.espe.house.view;
 
 import javax.swing.JOptionPane;

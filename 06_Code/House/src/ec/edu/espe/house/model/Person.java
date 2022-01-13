@@ -2,7 +2,7 @@ package ec.edu.espe.house.model;
 
 /**
  *
- * @author pc
+ * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
 public class Person {
     private String Name;
