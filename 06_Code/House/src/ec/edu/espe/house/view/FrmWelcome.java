@@ -1,12 +1,12 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+ */ //LINEAS NO VALIDAS//
 package ec.edu.espe.house.view;
 
 /**
  *
- * @author personal
+ * @author personal //FALTA INTEGRANTES
  */
 public class FrmWelcome extends javax.swing.JFrame {
 
