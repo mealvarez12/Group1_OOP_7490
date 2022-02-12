@@ -17,7 +17,7 @@ import org.bson.types.ObjectId;
  */
 public class FrmAddUser extends javax.swing.JFrame {         
       
-    MongoCollection<Document> User = new Connection().obtenerDB().getCollection("User");
+    MongoCollection<Document> User = new Connection().getDB().getCollection("User");
     DefaultTableModel table = new DefaultTableModel() {
         @Override
         public boolean isCellEditable(int row, int column) {
@@ -52,21 +52,21 @@ public class FrmAddUser extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jpnAddNewUser = new javax.swing.JPanel();
+        lblName = new javax.swing.JLabel();
+        lblCi = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         TxtName = new javax.swing.JTextField();
         TxtCi = new javax.swing.JTextField();
-        TxtCellphone = new javax.swing.JTextField();
+        lblCellphone = new javax.swing.JTextField();
         BtnAdd = new javax.swing.JButton();
         BtnDelete = new javax.swing.JButton();
         BtnExit = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblAddNewUser = new javax.swing.JLabel();
+        lblLastName = new javax.swing.JLabel();
         TxtLastName = new javax.swing.JTextField();
         BtnReturn = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        lblAddUserImages = new javax.swing.JLabel();
         BtnShowUsers = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         JtableUser = new javax.swing.JTable();
@@ -76,7 +76,7 @@ public class FrmAddUser extends javax.swing.JFrame {
         lblErrorName = new javax.swing.JLabel();
         lblErrorLastName = new javax.swing.JLabel();
         lblErrorCi = new javax.swing.JLabel();
-        lblCellphone = new javax.swing.JLabel();
+        lblErrorCellphone = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,9 +106,9 @@ public class FrmAddUser extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Name:");
+        lblName.setText("Name:");
 
-        jLabel2.setText("C.I.:");
+        lblCi.setText("C.I.:");
 
         jLabel3.setText("Cellphone:");
 
@@ -136,11 +136,11 @@ public class FrmAddUser extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 2, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel4.setText("Add New User");
+        lblAddNewUser.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 2, 24)); // NOI18N
+        lblAddNewUser.setForeground(new java.awt.Color(51, 51, 255));
+        lblAddNewUser.setText("Add New User");
 
-        jLabel5.setText("Last Name:");
+        lblLastName.setText("Last Name:");
 
         BtnReturn.setBackground(new java.awt.Color(102, 204, 255));
         BtnReturn.setText("Return");
@@ -150,7 +150,7 @@ public class FrmAddUser extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/business_application_addmale_useradd_insert_add_user_client_2312.png"))); // NOI18N
+        lblAddUserImages.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/business_application_addmale_useradd_insert_add_user_client_2312.png"))); // NOI18N
 
         BtnShowUsers.setBackground(new java.awt.Color(255, 255, 102));
         BtnShowUsers.setText("Show Users");
@@ -209,20 +209,20 @@ public class FrmAddUser extends javax.swing.JFrame {
 
         lblErrorCi.setText("jLabel6");
 
-        lblCellphone.setText("jLabel6");
+        lblErrorCellphone.setText("jLabel6");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpnAddNewUserLayout = new javax.swing.GroupLayout(jpnAddNewUser);
+        jpnAddNewUser.setLayout(jpnAddNewUserLayout);
+        jpnAddNewUserLayout.setHorizontalGroup(
+            jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnAddNewUserLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(119, 119, 119))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(jpnAddNewUserLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpnAddNewUserLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(BtnAdd)
                         .addGap(99, 99, 99)
@@ -234,76 +234,76 @@ public class FrmAddUser extends javax.swing.JFrame {
                         .addGap(71, 71, 71)
                         .addComponent(BtnExit)
                         .addGap(66, 66, 66))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnAddNewUserLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblAddNewUser, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(301, 301, 301))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
+                    .addGroup(jpnAddNewUserLayout.createSequentialGroup()
+                        .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpnAddNewUserLayout.createSequentialGroup()
+                                .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jpnAddNewUserLayout.createSequentialGroup()
+                                        .addComponent(lblAddUserImages)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblCi, javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jpnAddNewUserLayout.createSequentialGroup()
                                         .addGap(131, 131, 131)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel1))))
+                                        .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lblLastName)
+                                            .addComponent(lblName))))
                                 .addGap(41, 41, 41)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(TxtName, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TxtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TxtCi, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TxtCellphone, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblCellphone, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(89, 89, 89)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCellphone, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblErrorCellphone, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblErrorCi, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblErrorLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblErrorName, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jpnAddNewUserLayout.createSequentialGroup()
                                 .addGap(131, 131, 131)
                                 .addComponent(jpnGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(51, Short.MAX_VALUE))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jpnAddNewUserLayout.setVerticalGroup(
+            jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnAddNewUserLayout.createSequentialGroup()
                 .addGap(9, 9, 9)
-                .addComponent(jLabel4)
+                .addComponent(lblAddNewUser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblName)
                     .addComponent(TxtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblErrorName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpnAddNewUserLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblAddUserImages))
+                    .addGroup(jpnAddNewUserLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
+                        .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblLastName)
                             .addComponent(TxtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblErrorLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
+                        .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCi)
                             .addComponent(TxtCi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblErrorCi, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(TxtCellphone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCellphone, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblCellphone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblErrorCellphone, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jpnGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpnAddNewUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnAdd)
                     .addComponent(BtnDelete)
                     .addComponent(BtnShowUsers)
@@ -320,14 +320,14 @@ public class FrmAddUser extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpnAddNewUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpnAddNewUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -342,7 +342,7 @@ public class FrmAddUser extends javax.swing.JFrame {
             data.put("Name", TxtName.getText());
             data.put("Last Name", TxtLastName.getText());
              data.put("CI", Integer.parseInt(TxtCi.getText()));
-            data.put("Cellphone", Integer.parseInt(TxtCellphone.getText()));
+            data.put("Cellphone", Integer.parseInt(lblCellphone.getText()));
             
             if (rbtFemale.isSelected()){
                 data.put("Gender",("Female"));
@@ -460,28 +460,28 @@ public class FrmAddUser extends javax.swing.JFrame {
     private javax.swing.JButton BtnReturn;
     private javax.swing.JButton BtnShowUsers;
     private javax.swing.JTable JtableUser;
-    private javax.swing.JTextField TxtCellphone;
     private javax.swing.JTextField TxtCi;
     private javax.swing.JTextField TxtLastName;
     private javax.swing.JTextField TxtName;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JPanel jpnAddNewUser;
     private javax.swing.JPanel jpnGender;
-    private javax.swing.JLabel lblCellphone;
+    private javax.swing.JLabel lblAddNewUser;
+    private javax.swing.JLabel lblAddUserImages;
+    private javax.swing.JTextField lblCellphone;
+    private javax.swing.JLabel lblCi;
+    private javax.swing.JLabel lblErrorCellphone;
     private javax.swing.JLabel lblErrorCi;
     private javax.swing.JLabel lblErrorLastName;
     private javax.swing.JLabel lblErrorName;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblName;
     private javax.swing.JRadioButton rbtFemale;
     private javax.swing.JRadioButton rbtMale;
     // End of variables declaration//GEN-END:variables

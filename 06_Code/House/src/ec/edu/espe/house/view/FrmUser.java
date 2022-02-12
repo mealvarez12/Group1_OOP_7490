@@ -19,7 +19,7 @@ public class FrmUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jpnEnterToTheSystem = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         lblUser = new javax.swing.JLabel();
         BtnLogin = new javax.swing.JButton();
@@ -30,7 +30,7 @@ public class FrmUser extends javax.swing.JFrame {
         lblEnterToTheSystem = new javax.swing.JLabel();
         lblHouseSystem = new javax.swing.JLabel();
         lblHouseImage = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        mnuHouse = new javax.swing.JMenuBar();
         MnuHouseSystem = new javax.swing.JMenu();
         ItmAbout = new javax.swing.JMenuItem();
         ItmExit = new javax.swing.JMenuItem();
@@ -106,23 +106,23 @@ public class FrmUser extends javax.swing.JFrame {
         lblEnterToTheSystem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblEnterToTheSystem.setText("ENTER TO THE SYSTEM");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpnEnterToTheSystemLayout = new javax.swing.GroupLayout(jpnEnterToTheSystem);
+        jpnEnterToTheSystem.setLayout(jpnEnterToTheSystemLayout);
+        jpnEnterToTheSystemLayout.setHorizontalGroup(
+            jpnEnterToTheSystemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnEnterToTheSystemLayout.createSequentialGroup()
                 .addContainerGap(31, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jpnEnterToTheSystemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnEnterToTheSystemLayout.createSequentialGroup()
                         .addComponent(lblEnterToTheSystem)
                         .addGap(90, 90, 90))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnEnterToTheSystemLayout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        jpnEnterToTheSystemLayout.setVerticalGroup(
+            jpnEnterToTheSystemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnEnterToTheSystemLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblEnterToTheSystem)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -156,7 +156,7 @@ public class FrmUser extends javax.swing.JFrame {
         });
         MnuHouseSystem.add(ItmExit);
 
-        jMenuBar1.add(MnuHouseSystem);
+        mnuHouse.add(MnuHouseSystem);
 
         MnuGroup1.setText("Group1");
         MnuGroup1.addActionListener(new java.awt.event.ActionListener() {
@@ -173,9 +173,9 @@ public class FrmUser extends javax.swing.JFrame {
         });
         MnuGroup1.add(ItmStudents);
 
-        jMenuBar1.add(MnuGroup1);
+        mnuHouse.add(MnuGroup1);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(mnuHouse);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,7 +190,7 @@ public class FrmUser extends javax.swing.JFrame {
                             .addComponent(lblHouseSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jpnEnterToTheSystem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -201,7 +201,7 @@ public class FrmUser extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblHouseImage, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpnEnterToTheSystem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -309,13 +309,13 @@ public class FrmUser extends javax.swing.JFrame {
     private javax.swing.JMenu MnuHouseSystem;
     private javax.swing.JPasswordField PswPassword;
     private javax.swing.JTextField TxtUserName;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jpnEnterToTheSystem;
     private javax.swing.JLabel lblEnterToTheSystem;
     private javax.swing.JLabel lblHouseImage;
     private javax.swing.JLabel lblHouseSystem;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUser;
+    private javax.swing.JMenuBar mnuHouse;
     // End of variables declaration//GEN-END:variables
 }
