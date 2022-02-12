@@ -1,5 +1,5 @@
 
-package ec.edu.espe.house.model;
+package utils;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
