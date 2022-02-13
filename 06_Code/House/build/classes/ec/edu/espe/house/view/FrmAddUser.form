@@ -235,10 +235,19 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TxtName">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TxtNameKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="TxtCi">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TxtCiKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="lblCellphone">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="lblCellphoneKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnAdd">
           <Properties>
@@ -290,6 +299,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TxtLastName">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TxtLastNameKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnReturn">
           <Properties>
@@ -434,24 +446,12 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="lblErrorName">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel6"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblErrorLastName">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel6"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblErrorCi">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel6"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblErrorCellphone">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel6"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

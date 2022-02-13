@@ -4,6 +4,7 @@ package ec.edu.espe.house.view;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
+import java.awt.Color;
 import utils.Connection;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -112,6 +113,24 @@ public class FrmAddUser extends javax.swing.JFrame {
 
         jLabel3.setText("Cellphone:");
 
+        TxtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtNameKeyTyped(evt);
+            }
+        });
+
+        TxtCi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtCiKeyTyped(evt);
+            }
+        });
+
+        lblCellphone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                lblCellphoneKeyTyped(evt);
+            }
+        });
+
         BtnAdd.setBackground(new java.awt.Color(255, 255, 102));
         BtnAdd.setText("Add");
         BtnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +160,12 @@ public class FrmAddUser extends javax.swing.JFrame {
         lblAddNewUser.setText("Add New User");
 
         lblLastName.setText("Last Name:");
+
+        TxtLastName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtLastNameKeyTyped(evt);
+            }
+        });
 
         BtnReturn.setBackground(new java.awt.Color(102, 204, 255));
         BtnReturn.setText("Return");
@@ -202,14 +227,6 @@ public class FrmAddUser extends javax.swing.JFrame {
                     .addComponent(rbtMale))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
-
-        lblErrorName.setText("jLabel6");
-
-        lblErrorLastName.setText("jLabel6");
-
-        lblErrorCi.setText("jLabel6");
-
-        lblErrorCellphone.setText("jLabel6");
 
         javax.swing.GroupLayout jpnAddNewUserLayout = new javax.swing.GroupLayout(jpnAddNewUser);
         jpnAddNewUser.setLayout(jpnAddNewUserLayout);
@@ -392,8 +409,104 @@ public class FrmAddUser extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnDeleteActionPerformed
 
     private void BtnShowUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnShowUsersActionPerformed
-        view();
+        view(); 
     }//GEN-LAST:event_BtnShowUsersActionPerformed
+
+    private void TxtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtNameKeyTyped
+        int key = evt.getKeyChar();
+        boolean uper = (key >= 65 && key <= 90);
+        boolean lower = (key >= 97 && key <= 122);
+        boolean aiou = (key >= 160 && key <= 163);
+        boolean e = (key == 130);
+        boolean A = (key == 181);
+        boolean E = (key == 144);
+        boolean I = (key == 214);
+        boolean O = (key == 224);
+        boolean U = (key == 233);
+        boolean espace = (key == 32);
+        boolean supr = (key == 8);
+
+        if ((uper || lower || espace || supr || aiou || e || A || E || I || O || U)) {
+            lblErrorName.setForeground(new Color(0,153,0));
+            lblErrorName.setText("Name format is OK");
+
+        }else{
+
+            JOptionPane.showMessageDialog(this, "This field must be filled with uppercase and lowercase letters");
+            lblErrorName.setForeground(new Color(255,0,0));
+            lblErrorName.setText("Error !! Enter only letters");
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_TxtNameKeyTyped
+
+    private void TxtLastNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtLastNameKeyTyped
+                int key = evt.getKeyChar();
+        boolean uper = (key >= 65 && key <= 90);
+        boolean lower = (key >= 97 && key <= 122);
+        boolean aiou = (key >= 160 && key <= 163);
+        boolean e = (key == 130);
+        boolean A = (key == 181);
+        boolean E = (key == 144);
+        boolean I = (key == 214);
+        boolean O = (key == 224);
+        boolean U = (key == 233);
+        boolean espace = (key == 32);
+        boolean supr = (key == 8);
+
+        if ((uper || lower || espace || supr || aiou || e || A || E || I || O || U)) {
+            lblErrorLastName.setForeground(new Color(0,153,0));
+            lblErrorLastName.setText("Last Name format is OK");
+
+        }else{
+
+            JOptionPane.showMessageDialog(this, "This field must be filled with uppercase and lowercase letters");
+            lblErrorLastName.setForeground(new Color(255,0,0));
+            lblErrorLastName.setText("Error !! Enter only letters");
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_TxtLastNameKeyTyped
+
+    private void TxtCiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtCiKeyTyped
+         int key = evt.getKeyChar();
+        boolean numbers = (key >= 48 && key <= 57);
+        boolean dat = (key == 46);
+        boolean supr = (key == 8);
+
+        if (numbers || dat || supr) {
+            lblErrorCi.setForeground(new Color(0,153,0));
+            lblErrorCi.setText("CI format is OK.");
+
+        }else{
+
+            JOptionPane.showMessageDialog(this, "This field must be filled only with float numbers from 0 to 9, using the separator <.>");
+            lblErrorCi.setForeground(new Color(255,0,0));
+            lblErrorCi.setText("Error !! Enter only float numbers from 0 to 9, use .");
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_TxtCiKeyTyped
+
+    private void lblCellphoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblCellphoneKeyTyped
+                 int key = evt.getKeyChar();
+        boolean numbers = (key >= 48 && key <= 57);
+        boolean dat = (key == 46);
+        boolean supr = (key == 8);
+
+        if (numbers || dat || supr) {
+            lblErrorCellphone.setForeground(new Color(0,153,0));
+            lblErrorCellphone.setText("Cellphone format is OK.");
+
+        }else{
+
+            JOptionPane.showMessageDialog(this, "This field must be filled only with float numbers from 0 to 9, using the separator <.>");
+            lblErrorCellphone.setForeground(new Color(255,0,0));
+            lblErrorCellphone.setText("Error !! Enter only float numbers from 0 to 9, use .");
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_lblCellphoneKeyTyped
     
     /**
      * @param args the command line arguments

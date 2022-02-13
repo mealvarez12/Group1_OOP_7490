@@ -4,6 +4,9 @@ package ec.edu.espe.house.view;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
+import ec.edu.espe.house.controller.TelevisionDimensions;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -75,11 +78,11 @@ public class FrmTelevision extends javax.swing.JFrame {
         BtnRemove = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblTelevision = new javax.swing.JTable();
-        btnCalulateTVDimension = new javax.swing.JButton();
+        btnCalulateTVDimensiions = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         lblTelevisionImage = new javax.swing.JLabel();
         sldVolume = new javax.swing.JSlider();
         lblVolumeValue = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         BtnReturn = new javax.swing.JButton();
         BtnExit = new javax.swing.JButton();
 
@@ -108,7 +111,7 @@ public class FrmTelevision extends javax.swing.JFrame {
 
         cmbSelectRoom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "LivingRoom", "Bedroom 1", "Bedroom 2", "Bedroom 3" }));
 
-        cmbSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "32 Inches", "40 Inches", "42 Inches", "50 Inches", "55 Inches", "65 Inches", "70 Inches" }));
+        cmbSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "32", "40", "42", "50", "55", "65", "70" }));
 
         lblVolume.setText("Volume:");
 
@@ -207,34 +210,50 @@ public class FrmTelevision extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblTelevision);
 
-        btnCalulateTVDimension.setBackground(new java.awt.Color(102, 255, 255));
-        btnCalulateTVDimension.setText("Calculate TV dimensions");
+        btnCalulateTVDimensiions.setBackground(new java.awt.Color(102, 255, 255));
+        btnCalulateTVDimensiions.setText("Calculate TV Dimensions");
+        btnCalulateTVDimensiions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalulateTVDimensiionsActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setBackground(new java.awt.Color(0, 255, 255));
+        jLabel1.setText("Select a TV to calculate its dimensions:");
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout jpnButtonsLayout = new javax.swing.GroupLayout(jpnButtons);
         jpnButtons.setLayout(jpnButtonsLayout);
         jpnButtonsLayout.setHorizontalGroup(
             jpnButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnButtonsLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(BtnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(BtnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85)
-                .addComponent(BtnShowTVList)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCalulateTVDimension, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83))
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 789, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnButtonsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jpnButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnButtonsLayout.createSequentialGroup()
+                        .addComponent(BtnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86)
+                        .addComponent(BtnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76)
+                        .addComponent(BtnShowTVList)
+                        .addGap(68, 68, 68)
+                        .addComponent(btnCalulateTVDimensiions, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnButtonsLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66))))
         );
         jpnButtonsLayout.setVerticalGroup(
             jpnButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnButtonsLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpnButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnAdd)
                     .addComponent(BtnShowTVList)
                     .addComponent(BtnRemove)
-                    .addComponent(btnCalulateTVDimension))
+                    .addComponent(btnCalulateTVDimensiions))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -250,8 +269,6 @@ public class FrmTelevision extends javax.swing.JFrame {
                 sldVolumeStateChanged(evt);
             }
         });
-
-        jLabel1.setText("Select a TV to calculate its dimensions:");
 
         BtnReturn.setBackground(new java.awt.Color(102, 204, 255));
         BtnReturn.setText("Return");
@@ -306,23 +323,18 @@ public class FrmTelevision extends javax.swing.JFrame {
                                 .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
                                 .addComponent(cmbSize, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnTelevisionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpnTelevisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnTelevisionLayout.createSequentialGroup()
-                        .addComponent(lblTelevisionImage)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblTelevision, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(260, 260, 260))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnTelevisionLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(60, 60, 60))))
             .addGroup(jpnTelevisionLayout.createSequentialGroup()
                 .addGap(280, 280, 280)
                 .addComponent(BtnReturn)
                 .addGap(116, 116, 116)
                 .addComponent(BtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnTelevisionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTelevisionImage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblTelevision, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(286, 286, 286))
         );
         jpnTelevisionLayout.setVerticalGroup(
             jpnTelevisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,10 +382,8 @@ public class FrmTelevision extends javax.swing.JFrame {
                             .addComponent(lblVolume)))
                     .addGroup(jpnTelevisionLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(sldVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(sldVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jpnButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
                 .addGroup(jpnTelevisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -485,6 +495,37 @@ public class FrmTelevision extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_BtnExitActionPerformed
 
+    private void btnCalulateTVDimensiionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalulateTVDimensiionsActionPerformed
+     
+        calculateDimensionsOfTv();
+        
+    }//GEN-LAST:event_btnCalulateTVDimensiionsActionPerformed
+
+    public float calculateDimensionsOfTv(){
+        
+        DefaultTableModel tm = (DefaultTableModel) tblTelevision.getModel();
+        String TelevisionSize = String.valueOf(tm.getValueAt(tblTelevision.getSelectedRow(),5));
+        
+        int TelevisionSizeInt = Integer.parseInt(TelevisionSize);
+        
+        int diagonalSize = TelevisionSizeInt;
+        double high;
+        double width;
+ 
+        high = diagonalSize*2.21;
+        BigDecimal bdhigh = new BigDecimal(high).setScale(2, RoundingMode.HALF_UP);
+        double highRounded = bdhigh.doubleValue();
+        
+        width = (diagonalSize*1.245);
+        BigDecimal bdwidth = new BigDecimal(width).setScale(2, RoundingMode.HALF_UP);
+        double widthRounded = bdwidth.doubleValue();
+        
+        JOptionPane.showMessageDialog(this, "The TV High is: " + highRounded + " centimeters, and the TV width is " + widthRounded + " centimeters.");
+        return 0;
+
+        }
+    
+    
      public void read(){
         
         MongoCursor<Document> consulta = Television.find().iterator();
@@ -496,6 +537,7 @@ public class FrmTelevision extends javax.swing.JFrame {
         while(consulta.hasNext()){
             ArrayList<Object> doc = new ArrayList<Object>(consulta.next().values());
             table.addRow(doc.toArray());
+          
         }
     }
 
@@ -548,7 +590,7 @@ public class FrmTelevision extends javax.swing.JFrame {
     private javax.swing.JButton BtnRemove;
     private javax.swing.JButton BtnReturn;
     private javax.swing.JButton BtnShowTVList;
-    private javax.swing.JButton btnCalulateTVDimension;
+    private javax.swing.JButton btnCalulateTVDimensiions;
     private javax.swing.ButtonGroup btnGroupSaveEnergy;
     private javax.swing.ButtonGroup btnGroupStatus;
     private javax.swing.JComboBox<String> cmbSelectRoom;
@@ -578,4 +620,8 @@ public class FrmTelevision extends javax.swing.JFrame {
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtModel;
     // End of variables declaration//GEN-END:variables
+
+    private void calculateHighOfTv() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
