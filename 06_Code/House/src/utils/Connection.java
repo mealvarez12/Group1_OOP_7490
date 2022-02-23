@@ -14,12 +14,12 @@ import com.mongodb.client.MongoDatabase;
 public class Connection {
     
     
-    ConnectionString connectionString = new ConnectionString("mongodb+srv://andersmn:andersmn@clusteroop.3poht.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+    ConnectionString connectionString = new ConnectionString("mongodb+srv://mealvarez:<password>@clusteroop.09ypc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
     MongoClientSettings settings = MongoClientSettings.builder()
         .applyConnectionString(connectionString)
         .build();
     MongoClient mongoClient = MongoClients.create(settings);
-    MongoDatabase database = mongoClient.getDatabase("Home");   
+    MongoDatabase database = mongoClient.getDatabase("UserListSmartHome");   
     
     public MongoDatabase getDB(){
         return database;
