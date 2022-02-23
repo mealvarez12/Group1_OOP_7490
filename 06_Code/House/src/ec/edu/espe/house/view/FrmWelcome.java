@@ -185,9 +185,8 @@ public class FrmWelcome extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnAddUserActionPerformed
 
     private void BtnControlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnControlActionPerformed
-        
         this.setVisible(false);
-        new FrmController().setVisible(true);
+        new FrmController().setVisible(true);        
     }//GEN-LAST:event_BtnControlActionPerformed
 
     private void BtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExitActionPerformed

@@ -225,6 +225,7 @@ public class FrmUser extends javax.swing.JFrame {
         "Alvarez Ramirez Michelle Estefania\n" +
         "Andrade Carate Alan Damian\n" +
         "Andrango Espinosa Alex Paul");
+         
     }//GEN-LAST:event_ItmStudentsActionPerformed
 
     private void ItmAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmAboutActionPerformed

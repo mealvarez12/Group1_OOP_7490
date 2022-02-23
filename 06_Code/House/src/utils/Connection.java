@@ -1,28 +1,14 @@
 
 package utils;
 
-import com.mongodb.ConnectionString;
-import com.mongodb.MongoClientSettings;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoDatabase;
+import ec.edu.espe.house.controller.ConnectionToDB;
 
 /**
  *
  * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
 public class Connection {
+
+    ConnectionToDB connectionToDB = new ConnectionToDB();
     
-    
-    ConnectionString connectionString = new ConnectionString("mongodb+srv://mealvarez:<password>@clusteroop.09ypc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-    MongoClientSettings settings = MongoClientSettings.builder()
-        .applyConnectionString(connectionString)
-        .build();
-    MongoClient mongoClient = MongoClients.create(settings);
-    MongoDatabase database = mongoClient.getDatabase("UserListSmartHome");   
-    
-    public MongoDatabase getDB(){
-        return database;
-        
-    }
 }

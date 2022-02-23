@@ -4,7 +4,7 @@ package ec.edu.espe.house.view;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
-import ec.edu.espe.house.controller.TelevisionDimensions;
+import ec.edu.espe.house.controller.ConnectionToDB;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.bson.Document;
 import org.bson.types.ObjectId;
-import utils.Connection;
 
 /**
  *
@@ -20,7 +19,7 @@ import utils.Connection;
  */
 public class FrmTelevision extends javax.swing.JFrame {
     
-    MongoCollection<Document> Television = new Connection().getDB().getCollection("Television");
+    MongoCollection<Document> Television = new ConnectionToDB().getDB().getCollection("Television");
     DefaultTableModel table = new DefaultTableModel() {
         @Override
         public boolean isCellEditable(int row, int column) {

@@ -1,8 +1,6 @@
 
 package ec.edu.espe.house.model;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author malvarez, altamiranoc, almachea, andradea, andrangoa
@@ -10,21 +8,28 @@ import java.util.ArrayList;
 public class User {
     
     private String name;
-    private int age;
-    private int []cellphone = new int [1];
-    private ArrayList<House> house = new ArrayList<House>();
+    private String lastName;
+    private int Ci;
+    private int cellphone;
+    private String gender;
 
-    public User(String name, int age) {
+    public User(String name, String lastName, int Ci, int cellphone, String gender) {
         this.name = name;
-        this.age = age;
+        this.lastName = lastName;
+        this.Ci = Ci;
+        this.cellphone = cellphone;
+        this.gender = gender;
     }
     
+    
+
     /**
      * @return the name
      */
     public String getName() {
         return name;
     }
+
     /**
      * @param name the name to set
      */
@@ -33,44 +38,59 @@ public class User {
     }
 
     /**
-     * @return the age
+     * @return the lastName
      */
-    public int getAge() {
-        return age;
+    public String getLastName() {
+        return lastName;
     }
 
     /**
-     * @param age the age to set
+     * @param lastName the lastName to set
      */
-    public void setAge(int age) {
-        this.age = age;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    /**
+     * @return the Ci
+     */
+    public int getCi() {
+        return Ci;
+    }
+
+    /**
+     * @param Ci the Ci to set
+     */
+    public void setCi(int Ci) {
+        this.Ci = Ci;
     }
 
     /**
      * @return the cellphone
      */
-    public int[] getCellphone() {
+    public int getCellphone() {
         return cellphone;
     }
 
     /**
      * @param cellphone the cellphone to set
      */
-    public void setCellphone(int[] cellphone) {
+    public void setCellphone(int cellphone) {
         this.cellphone = cellphone;
-    }
-    /**
-     * @return the house
-     */
-    public ArrayList<House> getHouse() {
-        return house;
     }
 
     /**
-     * @param house the house to set
+     * @return the gender
      */
-    public void setHouse(ArrayList<House> house) {
-        this.house = house;
+    public String getGender() {
+        return gender;
+    }
+
+    /**
+     * @param gender the gender to set
+     */
+    public void setGender(String gender) {
+        this.gender = gender;
     }
     
 }
