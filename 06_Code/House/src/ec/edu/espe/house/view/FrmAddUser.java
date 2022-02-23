@@ -18,7 +18,7 @@ import org.bson.types.ObjectId;
  */
 public class FrmAddUser extends javax.swing.JFrame {         
       
-    MongoCollection<Document> User = new Connection().getDB().getCollection("User");
+    MongoCollection<Document> User = new Connection().getDB().getCollection("Date");
     DefaultTableModel table = new DefaultTableModel() {
         @Override
         public boolean isCellEditable(int row, int column) {
