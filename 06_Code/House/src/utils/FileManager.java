@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Altamirano Cristhian 
+ * @author malvarez, altamiranoc, almachea, andradea, andrangoa 
  */
 public class FileManager {
     
