@@ -12,27 +12,27 @@ public class RemoteControl {
     
     }
     
-    private void openDoor() {
+    public void openDoor() {
 
     }
     
-    private void closeDoor() {
+    public void closeDoor() {
 
     }  
     
-    private void turnOnLight() {
+    public void turnOnLight() {
 
     }
     
-    private void turnOffLight() {
+    public void turnOffLight() {
 
     }
 
-    private void turnOn() {
+    public void turnOn() {
 
     }
     
-    private void turnOff() {
+    public void turnOff() {
 
     }
     

@@ -24,7 +24,7 @@ public class FrmWelcome extends javax.swing.JFrame {
         lblWelcome = new javax.swing.JLabel();
         lblControlTheHouse = new javax.swing.JLabel();
         jpnControl = new javax.swing.JPanel();
-        BtnAddUser1 = new javax.swing.JButton();
+        BtnControl = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         BtnExit = new javax.swing.JButton();
         BtnReturn = new javax.swing.JButton();
@@ -75,11 +75,11 @@ public class FrmWelcome extends javax.swing.JFrame {
         lblControlTheHouse.setForeground(new java.awt.Color(0, 204, 0));
         lblControlTheHouse.setText("CONTROL THE HOUSE");
 
-        BtnAddUser1.setBackground(new java.awt.Color(0, 204, 0));
-        BtnAddUser1.setText("Control");
-        BtnAddUser1.addActionListener(new java.awt.event.ActionListener() {
+        BtnControl.setBackground(new java.awt.Color(0, 204, 0));
+        BtnControl.setText("Control");
+        BtnControl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAddUser1ActionPerformed(evt);
+                BtnControlActionPerformed(evt);
             }
         });
 
@@ -94,7 +94,7 @@ public class FrmWelcome extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel8)
                 .addGap(64, 64, 64)
-                .addComponent(BtnAddUser1, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                .addComponent(BtnControl, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jpnControlLayout.setVerticalGroup(
@@ -103,7 +103,7 @@ public class FrmWelcome extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jpnControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(BtnAddUser1))
+                    .addComponent(BtnControl))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -184,9 +184,10 @@ public class FrmWelcome extends javax.swing.JFrame {
         new FrmAddUser().setVisible(true);
     }//GEN-LAST:event_BtnAddUserActionPerformed
 
-    private void BtnAddUser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddUser1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnAddUser1ActionPerformed
+    private void BtnControlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnControlActionPerformed
+        this.setVisible(false);
+        new FrmController().setVisible(true);        
+    }//GEN-LAST:event_BtnControlActionPerformed
 
     private void BtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExitActionPerformed
         System.exit(0);
@@ -235,7 +236,7 @@ public class FrmWelcome extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAddUser;
-    private javax.swing.JButton BtnAddUser1;
+    private javax.swing.JButton BtnControl;
     private javax.swing.JButton BtnExit;
     private javax.swing.JButton BtnReturn;
     private javax.swing.JLabel jLabel8;

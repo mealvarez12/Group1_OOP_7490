@@ -4,7 +4,7 @@ package ec.edu.espe.house.view;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
-import ec.edu.espe.house.controller.TelevisionDimensions;
+import ec.edu.espe.house.controller.ConnectionToDB;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.bson.Document;
 import org.bson.types.ObjectId;
-import utils.Connection;
 
 /**
  *
@@ -20,14 +19,15 @@ import utils.Connection;
  */
 public class FrmTelevision extends javax.swing.JFrame {
     
-    MongoCollection<Document> Television = new Connection().getDB().getCollection("Television");
+    MongoCollection<Document> Television = new ConnectionToDB().getDB().getCollection("Television");
     DefaultTableModel table = new DefaultTableModel() {
         @Override
         public boolean isCellEditable(int row, int column) {
             return false; 
         }
     };
-
+    String id;
+    String brand;
     public FrmTelevision() {
         initComponents();
         
@@ -85,6 +85,8 @@ public class FrmTelevision extends javax.swing.JFrame {
         lblVolumeValue = new javax.swing.JLabel();
         BtnReturn = new javax.swing.JButton();
         BtnExit = new javax.swing.JButton();
+        lblErrorIdTelevision = new javax.swing.JLabel();
+        lblErrorBrandTelevision = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,6 +104,22 @@ public class FrmTelevision extends javax.swing.JFrame {
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);
+            }
+        });
+        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdKeyTyped(evt);
+            }
+        });
+
+        txtBrand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBrandActionPerformed(evt);
+            }
+        });
+        txtBrand.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBrandKeyTyped(evt);
             }
         });
 
@@ -286,6 +304,10 @@ public class FrmTelevision extends javax.swing.JFrame {
             }
         });
 
+        lblErrorIdTelevision.setForeground(new java.awt.Color(255, 255, 51));
+
+        lblErrorBrandTelevision.setForeground(new java.awt.Color(255, 255, 51));
+
         javax.swing.GroupLayout jpnTelevisionLayout = new javax.swing.GroupLayout(jpnTelevision);
         jpnTelevision.setLayout(jpnTelevisionLayout);
         jpnTelevisionLayout.setHorizontalGroup(
@@ -318,10 +340,15 @@ public class FrmTelevision extends javax.swing.JFrame {
                                 .addComponent(lblVolumeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(sldVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jpnTelevisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtBrand, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                                .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                                .addComponent(cmbSize, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jpnTelevisionLayout.createSequentialGroup()
+                                .addGroup(jpnTelevisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtBrand, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                    .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                    .addComponent(cmbSize, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jpnTelevisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblErrorIdTelevision, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(lblErrorBrandTelevision, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jpnTelevisionLayout.createSequentialGroup()
                 .addGap(280, 280, 280)
@@ -357,11 +384,13 @@ public class FrmTelevision extends javax.swing.JFrame {
                             .addGroup(jpnTelevisionLayout.createSequentialGroup()
                                 .addGroup(jpnTelevisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblErrorIdTelevision, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jpnTelevisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblBrand)
-                                    .addComponent(txtBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblErrorBrandTelevision, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -501,6 +530,32 @@ public class FrmTelevision extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnCalulateTVDimensiionsActionPerformed
 
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
+            if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' ) {
+            lblErrorIdTelevision.setText("");
+            }else {
+            lblErrorIdTelevision.setText("Use numbers");
+            txtId.setText(id.replace("", ""));
+           
+        }
+    }//GEN-LAST:event_txtIdKeyTyped
+
+    private void txtBrandKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBrandKeyTyped
+        if(evt.getKeyChar() >= 'a' && evt.getKeyChar() <= 'z') {
+            lblErrorBrandTelevision.setText("");
+        } else if(evt.getKeyChar() >= 'A' && evt.getKeyChar() <= 'Z') {             
+            lblErrorBrandTelevision.setText("");
+        }else {    
+            lblErrorBrandTelevision.setText("error");
+            lblErrorBrandTelevision.setText(brand.replace("", ""));  
+        }
+        
+    }//GEN-LAST:event_txtBrandKeyTyped
+
+    private void txtBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBrandActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBrandActionPerformed
+
     public float calculateDimensionsOfTv(){
         
         DefaultTableModel tm = (DefaultTableModel) tblTelevision.getModel();
@@ -602,6 +657,8 @@ public class FrmTelevision extends javax.swing.JFrame {
     private javax.swing.JPanel jpnStatus;
     private javax.swing.JPanel jpnTelevision;
     private javax.swing.JLabel lblBrand;
+    private javax.swing.JLabel lblErrorBrandTelevision;
+    private javax.swing.JLabel lblErrorIdTelevision;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblModel;
     private javax.swing.JLabel lblRoom;

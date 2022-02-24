@@ -86,10 +86,17 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="sldVolume" min="-2" pref="303" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtBrand" alignment="0" pref="158" max="32767" attributes="0"/>
-                                  <Component id="txtId" alignment="0" pref="158" max="32767" attributes="0"/>
-                                  <Component id="cmbSize" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtBrand" alignment="0" pref="158" max="32767" attributes="0"/>
+                                      <Component id="txtId" alignment="0" pref="158" max="32767" attributes="0"/>
+                                      <Component id="cmbSize" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="lblErrorIdTelevision" pref="100" max="32767" attributes="0"/>
+                                      <Component id="lblErrorBrandTelevision" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -137,11 +144,13 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblId" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                                       <Component id="txtId" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblErrorIdTelevision" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblBrand" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtBrand" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblErrorBrandTelevision" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="txtModel" min="-2" max="-2" attributes="0"/>
@@ -220,9 +229,14 @@
         <Component class="javax.swing.JTextField" name="txtId">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIdKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtBrand">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBrandActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtBrandKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtModel">
         </Component>
@@ -555,6 +569,20 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnExitActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblErrorIdTelevision">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblErrorBrandTelevision">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

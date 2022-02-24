@@ -4,8 +4,8 @@ package ec.edu.espe.house.view;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
+import ec.edu.espe.house.controller.ConnectionToDB;
 import java.awt.Color;
-import utils.Connection;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -16,16 +16,17 @@ import org.bson.types.ObjectId;
  *
  * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
-public class FrmAddUser extends javax.swing.JFrame {         
+public final class FrmAddUser extends javax.swing.JFrame {         
       
-    MongoCollection<Document> User = new Connection().getDB().getCollection("User");
+    MongoCollection<Document> User = new ConnectionToDB().getDB().getCollection("User");
     DefaultTableModel table = new DefaultTableModel() {
         @Override
         public boolean isCellEditable(int row, int column) {
             return false; 
         }
     };
-           
+    
+      
     public FrmAddUser(){         
         
         initComponents(); 
