@@ -15,7 +15,7 @@ import org.bson.types.ObjectId;
 
 /**
  *
- * @author Alvarez Michelle DEEL-ESPE
+ * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
 public class FrmTelevision extends javax.swing.JFrame {
     
