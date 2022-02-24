@@ -16,7 +16,7 @@ public class TelevisionDimensionTest {
     /**
      * Test of calculateHighOfTv method, of class TelevisionDimensions.
      */
-    
+    //dont run unit test o.o 
             @Test
     public void testCalculateHighOfTvZero() {
         System.out.println("calculateHighOfTv");
