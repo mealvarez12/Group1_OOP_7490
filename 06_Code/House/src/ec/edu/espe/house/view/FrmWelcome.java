@@ -3,7 +3,7 @@ package ec.edu.espe.house.view;
 
 /**
  *
- * @author Alvarez Michelle DEEL-ESPE
+ * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
 public class FrmWelcome extends javax.swing.JFrame {
 

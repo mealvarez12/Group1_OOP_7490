@@ -6,7 +6,7 @@ import java.math.RoundingMode;
 
 /**
  *
- * @author Alvarez Michelle DEEL-ESPE
+ * @author malvarez, altamiranoc, almachea, andradea, andrangoa
  */
 public class TelevisionDimensions {
     
