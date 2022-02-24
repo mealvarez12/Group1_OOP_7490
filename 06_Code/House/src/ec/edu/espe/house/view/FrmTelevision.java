@@ -209,6 +209,7 @@ public class FrmTelevision extends javax.swing.JFrame {
 
         BtnRemove.setBackground(new java.awt.Color(153, 255, 153));
         BtnRemove.setText("Remove");
+        BtnRemove.setEnabled(false);
         BtnRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnRemoveActionPerformed(evt);
@@ -230,6 +231,7 @@ public class FrmTelevision extends javax.swing.JFrame {
 
         btnCalulateTVDimensiions.setBackground(new java.awt.Color(102, 255, 255));
         btnCalulateTVDimensiions.setText("Calculate TV Dimensions");
+        btnCalulateTVDimensiions.setEnabled(false);
         btnCalulateTVDimensiions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalulateTVDimensiionsActionPerformed(evt);
@@ -463,7 +465,8 @@ public class FrmTelevision extends javax.swing.JFrame {
     private void BtnShowTVListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnShowTVListActionPerformed
         read();
 
-        // TODO add your handling code here:
+       BtnRemove.setEnabled(true);
+       btnCalulateTVDimensiions.setEnabled(true);
     }//GEN-LAST:event_BtnShowTVListActionPerformed
 
     private void BtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddActionPerformed

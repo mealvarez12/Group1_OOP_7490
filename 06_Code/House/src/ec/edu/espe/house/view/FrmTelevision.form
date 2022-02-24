@@ -471,6 +471,7 @@
                   <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Remove"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRemoveActionPerformed"/>
@@ -509,6 +510,7 @@
                   <Color blue="ff" green="ff" red="66" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Calculate TV Dimensions"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalulateTVDimensiionsActionPerformed"/>
